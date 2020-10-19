@@ -1,10 +1,14 @@
 from flask import Flask
 
 from views import  index_blu
+from models import db
 
 app = Flask(__name__)
 
-# 创建蓝图
+# 加载配置
+app.config.from_pyfile("config.ini")
+
+# 创建蓝图,且注册到app
 app.register_blueprint(index_blu)
 
 

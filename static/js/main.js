@@ -72,7 +72,6 @@ $(function(){
 
 
 
-
     // 登录表单提交
     $(".login_form_con").submit(function (e) {
         e.preventDefault()

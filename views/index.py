@@ -15,3 +15,7 @@ def index():
 def gallery():
     return render_template("gallery.html")
 
+
+@index_blu.route("/index/about-us.html")
+def about():
+    return render_template("about-us.html")

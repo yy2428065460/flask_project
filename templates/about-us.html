@@ -7,12 +7,12 @@
 		<!-- For IE -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title>ChinaZ</title>
+		<title>关于我们</title>
 		
 		<!-- Main style sheet -->
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="/static/css/style.css">
 		<!-- responsive style sheet -->
-		<link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="/static/css/responsive.css">
 
 		<!-- Fix Internet Explorer ______________________________________-->
 
@@ -33,8 +33,8 @@
 					<div class="container">
 						<div class="clear-fix">
 							<ul class="float-left top-header-left">
-								<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> FoodFarm, W 35th St, New York</a></li>
-								<li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> mypet_info@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> 传智专修学院</a></li>
+								<li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> yy2428065460@gmail.com</a></li>
 							</ul>
 							<ul class="float-right top-header-right">
 								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -57,7 +57,7 @@
 					   			<div class="search-box tran5s" id="searchWrapper">
 					   				<button id="close-button" class="p-color"><i class="fa fa-times" aria-hidden="true"></i></button>
 					   				<div class="container">
-					   					<img src="images/them-logo/them-main-logo-1.png" alt="Logo">
+					   					<img src="/static/images/them-logo/them-main-logo-1.png" alt="Logo">
 					   					<form action="#">
 					   						<input type="text" placeholder="Search....">
 					   						<button class="p-bg-color"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -65,7 +65,7 @@
 					   				</div>
 					   			</div> <!-- /.search-box -->
 					   		</div> <!-- /.right-content -->
-					   		<div class="them-logo float-left"><a href="#"><img src="images/them-logo/them-main-logo-1.jpg" alt="logo"></a></div>
+					   		<div class="them-logo float-left"><a href="#"><img src="/static/images/them-logo/them-main-logo-1.jpg" alt="logo"></a></div>
 
 							<!-- Menu -->
 							<nav class="navbar">
@@ -82,13 +82,13 @@
 								<!-- Collect the nav links, forms, and other content for toggling -->
 								<div class="collapse navbar-collapse" id="navbar-collapse-1">
 									<ul class="nav navbar-nav">
-										<li><a href="index.html">Home</a></li>
-										<li><a href="gallery.html">Gallery</a></li>
-									    <li><a href="about-us.html">About</a></li>
-										<li><a href="team.html">Team</a></li>
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="shop-details.html">Shop Details</a></li>
-										<li><a href="contact-us.html">Contact</a></li>
+										<li><a href="{{ url_for('index_blu.index') }}">主页</a></li>
+										<li><a href="{{ url_for('index_blu.gallery') }}">画廊</a></li>
+									    <li><a href="{{ url_for('index_blu.about') }}">关于我们</a></li>
+										<li><a href="team.html">护理团队</a></li>
+										<li><a href="shop.html">购买</a></li>
+										<li><a href="shop-details.html">店铺详情</a></li>
+										<li><a href="contact-us.html">联系我们</a></li>
 									</ul>
 								</div><!-- /.navbar-collapse -->
 							</nav>
@@ -106,17 +106,17 @@
 								<div class="row">
 									<div class="col-sm-8 col-xs-12">
 										<div class="">
-											<h1>About Us</h1>
-											<p>Pet lovers rely on Becky’s Pet Care for professional dog walking and pet sitting.</p>
+											<h1>关于我们</h1>
+											<p>宠物爱好者可以依靠Becky的Pet Care进行专业的walking狗和坐宠物。</p>
 										</div>
 									</div>
 									<div class="col-sm-4 col-xs-12">
 										<div class="">
-											<a href="#" class="hvr-float-shadow">Get A Quote</a>
+											<a href="#" class="hvr-float-shadow">购买</a>
 										</div>
 									</div>
 								</div>
-								<img src="images/about/dog-1.png" alt="">
+								<img src="/static/images/about/dog-1.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -124,11 +124,9 @@
 				<div class="inner-banner-bottom">
 					<div class="container">
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<li><a href="/">主页</a></li>
 							<li><span>-</span></li>
-							<li><a href="index.html">Page</a></li>
-							<li><span>-</span></li>
-							<li><a href="#">About us</a></li>
+							<li><a href="#">关于我们</a></li>
 						</ul>
 					</div>
 				</div>
@@ -142,8 +140,8 @@
 							<div class="banner-bottom-item">
 								<div class="banner-bottom-contante text-center">
 									<i class="flaticon-egyptian-cat"></i>
-									<h6><a href="#">Healthy Pet Care</a></h6>
-									<p>We have over 15 years of experience</p>
+									<h6><a href="#">健康的宠物护理</a></h6>
+									<p>我们有超过15年的经验</p>
 								</div>
 							</div>
 						</div>
@@ -151,8 +149,8 @@
 							<div class="banner-bottom-item">
 								<div class="banner-bottom-contante text-center">
 									<i class="flaticon-dog-training"></i>
-									<h6><a href="#">Request for Services</a></h6>
-									<p>Quality Pet Service</p>
+									<h6><a href="#">优质服务</a></h6>
+									<p>最好的宠物服务</p>
 								</div>
 							</div>
 						</div>
@@ -160,8 +158,8 @@
 							<div class="banner-bottom-item">
 								<div class="banner-bottom-contante text-center">
 									<i class="flaticon-pawprint"></i>
-									<h6><a href="#">$40 Off Purchase</a></h6>
-									<p>$100 off OR Special Financing!</p>
+									<h6><a href="#">40元即可购买</a></h6>
+									<p>限时5折！！！</p>
 								</div>
 							</div>
 						</div>
@@ -176,41 +174,41 @@
 						<div class="col-md-6 col-xs-12">
 							<div class="we-are-my-pet-text">
 								<span></span>
-								<h2>We are <span>my<span>Pet</span></span></h2>
-								<p>Welcome! We are glad you would like to explore a different type of pet care for your furry friends. We have been providing top-notch pet sitting and pet care in the Littleton community since 1995 and the Best Choice as an alternative to pet boarding</p>
-								<p>There are many advantages of your pet staying in their own home. Some of them are; no exposure to illnesses such as kennel cough, canine flu, & parasites. Whether it’s a spa day, play date, sleepover, training class or veterinary care, we provide the best in pet services with highly trained, devoted associates. Services are conveniently located inside most of our PetSmart stores.</p>
+								<h2>我们 <span>my<span>Pet</span></span></h2>
+								<p>欢迎！我们很高兴您想为毛茸茸的朋友探索另一种宠物护理。自1995年以来，我们就一直在利特尔顿社区提供一流的宠物托管和宠物护理服务，并且是“最佳选择”作为宠物寄宿的替代选择</p>
+								<p>您的宠物住在自己的家里有很多好处。他们之中有一些是; 不得接触狗窝咳嗽，犬流感和寄生虫等疾病。无论是水疗日，游玩日期，过夜，训练课程还是兽医护理，我们都会与训练有素的热忱员工共同为您提供最好的宠物服务。服务位于我们大多数PetSmart商店内，十分方便。</p>
 							</div>
 						</div>
 						<div class="col-md-6 col-xs-12">
 							<div class="we-are-my-pet-img">
-								<img src="images/home/img-1.jpg" alt="image">
+								<img src="/static/images/home/img-1.jpg" alt="image">
 								<div></div>
 							</div>
 						</div>
 					</div>
 
 					<div class="about-us-we-are-my-pet">
-						<h4>About Us</h4>
+						<h4>关于我们</h4>
 						<div class="row">
 							<div class="col-md-5 col-xs-12">
 								<div class="about-us-dog-years">
-									<p>For 20 years, we’ve been treating your pets like our family.</p>
-									<span>(That’s 140 in dog years.)</span>
-									<div><img src="images/about/cat-dog-2.png" alt=""></div>
+									<p>20年来，我们一直像对待家人一样对待您的宠物。</p>
+									<span>(按狗的年龄计算是140岁。)</span>
+									<div><img src="/static/images/about/cat-dog-2.png" alt=""></div>
 								</div>
 							</div>
 							<div class="col-md-7 col-xs-12">
 								<div class="about-us-tex">
-									<p>Best Friends Pet Care is the leader of the pack when it comes to the absolute best care for your cat or dog. With 52 centers and hospitals in 20 states, including Walt Disney World, our state-of-the-art facilities provide your pet with a safe, clean and fun environment that will remind your fido or feline of home.</p>
-									<p>Whether your pet needs a scratch around the ear, a face to lick or a place to play, your best friend will be taken care of as if our own. So pets, want a treat? Come. Sit. Stay a while. We think you’ll see why it’s “Best to stay with Friends.”</p>
-									<p>Our flagship center opened to national acclaim in 1996, setting a new standard in pet care. We offer an extensive menu of activities and services – from fitness sessions to bedtime stories – so you can design the perfect vacation for your pet.</p>
+									<p>在为您的猫或狗提供绝对最佳护理时，“最佳朋友宠物护理”是包装的领导者。在包括沃尔特迪斯尼乐园在内的20个州设有52个中心和医院，我们最先进的设施为您的宠物提供安全，清洁和有趣的环境，让您的小动物或猫科动物有家的感觉。</p>
+									<p>无论您的宠物需要在耳朵上刮擦，舔脸还是在玩耍的地方，您最好的朋友都会像我们一样照顾自己。宠物，请客吗？来。坐。停留片刻。我们认为您会明白为什么它是“最适合与朋友在一起的人”的原因。</p>
+									<p>我们的旗舰中心于1996年开业，并在宠物护理方面树立了新的标准，并获得了国家的赞誉。从健身课程到就寝故事，我们提供广泛的活动和服务菜单，因此您可以为宠物设计一个完美的假期。</p>
 								</div>
 							</div>
 						</div>
 						<div class="about-us-we-are-mypet-video">
-							<img src="images/about/img-1.jpg" alt="image">
+							<img src="/static/images/about/img-1.jpg" alt="image">
 							<div>
-								<a data-fancybox href="https://www.youtube.com" class="tran3s"><i class="flaticon-play-button"></i></a>					
+								<a data-fancybox href="https://www.bilibili.com/video/BV1mp4y1a7Jc" class="tran3s"><i class="flaticon-play-button"></i></a>
 							</div>
 						</div>
 					</div>
@@ -219,7 +217,7 @@
 
 			<!-- Company History _________________________________ -->
 			<section class="company-history-section">
-				<div class="company-history-shape-img-top"><img src="images/shape-1.png" alt="shape-img"></div>
+				<div class="company-history-shape-img-top"><img src="/static/images/shape-1.png" alt="shape-img"></div>
 				<div class="company-history-containt-opact">
 					<div class="container">
 						<div class="row">
@@ -228,7 +226,7 @@
 									<div class="history-item item-one">
 										<div>
 											<i class="flaticon-handshake"></i>
-											<p>Happy Customers</p>
+											<p>客户满意数</p>
 											<h2><span class="timer" data-from="0" data-to="210" data-speed="2000" data-refresh-interval="5">0</span></h2>
 										</div>
 									</div>
@@ -239,7 +237,7 @@
 									<div class="history-item item-two">
 										<div>
 											<i class="flaticon-satisfaction"></i>
-											<p>Customer Satisfaction</p>
+											<p>客户满意度</p>
 											<h2><span class="timer" data-from="0" data-to="100" data-speed="2000" data-refresh-interval="5">0</span>%</h2>
 										</div>
 									</div>
@@ -250,7 +248,7 @@
 									<div class="history-item item-three">
 										<div>
 											<i class="flaticon-construction"></i>
-											<p>Pet Hosted</p>
+											<p>宠物托管</p>
 											<h2><span class="timer" data-from="0" data-to="95" data-speed="2000" data-refresh-interval="5">0</span></h2>
 										</div>
 									</div>
@@ -261,7 +259,7 @@
 									<div class="history-item item-four">
 										<div>
 											<i class="flaticon-medal"></i>
-											<p>Awards Winning</p>
+											<p>获奖情况</p>
 											<h2><span class="timer" data-from="0" data-to="234" data-speed="2000" data-refresh-interval="5">0</span></h2>
 										</div>
 									</div>
@@ -278,19 +276,19 @@
 					<div class="row">
 						<div class="col-md-6 col-xs-12">
 							<div class="our-work-process">
-								<h4>Our pet health care System</h4>
-								<p>The doctors and staff at Pet Care Veterinary Hospital have years of experience treating a variety of reptiles including Bearded Dragons, Geckos, Snakes and Tortoises. Our hospital offers physical exams, vaccinations, nutrition, behavioral and environmental enrichment information for your pet ferret.</p>
+								<h4>我们的宠物保健系统</h4>
+								<p>宠物护理兽医医院的医生和工作人员具有多年治疗各种爬行动物的经验，包括胡子龙，壁虎，蛇和乌龟。我们的医院为您的宠物雪貂提供身体检查，疫苗接种，营养，行为和环境方面的丰富信息。</p>
 								<div class="row">
 									<div class="col-xs-6">
 										<div class="">
 											<i class="flaticon-dog-training"></i>
-											<h6><a href="#">Home Delivery</a></h6>
+											<h6><a href="#">送货上门</a></h6>
 										</div>
 									</div>
 									<div class="col-xs-6">
 										<div class="">
 											<i class="flaticon-snowshoe-cat"></i>
-											<h6><a href="#">QUALITY Pet</a></h6>
+											<h6><a href="#">宠物质量</a></h6>
 										</div>
 									</div>
 								</div>
@@ -298,8 +296,8 @@
 						</div>
 						<div class="col-md-6 col-xs-12">
 							<div class="doing-the-right-thing">
-								<h5>Doing the right thing, Discover Our Products</h5>
-								<p>Our veterinarians and staff understand the importance of the special bond you share with your pet and are dedicated to providing the best that modern veterinary care has to offer</p>
+								<h5>您最正确的事就是发现了我们的产品</h5>
+								<p>我们的兽医和工作人员理解你和你的宠物之间特殊关系的重要性，并致力于提供最好的现代兽医护理</p>
 								<div class="inspiration-tab">
 									<div class="inspiration-panel">
 										<div class="panel-group theme-accordion" id="accordion">
@@ -307,12 +305,12 @@
 										    <div class="panel-heading active-panel">
 										      <h6 class="panel-title">
 										        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-										        Trusted Pet Sitters Across the Country</a>
+										        值得信赖的宠物保姆</a>
 										      </h6>
 										    </div>
 										    <div id="collapse1" class="panel-collapse collapse in">
 										      <div class="panel-body">
-										      	<p>The perfect harmony between innovation and creativity, our bathroom tiles are produced in compliance with the international standards. High quality 20mm thick porcelain tiles that can be laid on pedestals,</p>
+										      	<p>宠物保姆们可以在您工作繁忙之际，或者出远门旅行之时，帮您照顾您的爱宠，接受上门服务</p>
 										      </div>
 										    </div>
 										  </div> <!-- /panel 1 -->
@@ -320,12 +318,12 @@
 										    <div class="panel-heading">
 										      <h6 class="panel-title">
 										        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-										        What can I offer my bird as a treat?</a>
+										        我可以用什么款待我的鸟呢?</a>
 										      </h6>
 										    </div>
 										    <div id="collapse2" class="panel-collapse collapse">
 										      <div class="panel-body">
-										      	<p>The perfect harmony between innovation and creativity, our bathroom tiles are produced in compliance with the international standards. High quality 20mm thick porcelain tiles that can be laid on pedestals,</p>
+										      	<p>我们将会为您的爱鸟提供优质的食物和居住环境，远离闹市和城区，并且每天会有专人进行遛鸟工作</p>
 										      </div>
 										    </div>
 										  </div> <!-- /panel 2 -->
@@ -333,12 +331,12 @@
 										    <div class="panel-heading">
 										      <h6 class="panel-title">
 										        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-										        When Your Rabbit Stops Eating</a>
+										        当你的兔子停止进食</a>
 										      </h6>
 										    </div>
 										    <div id="collapse3" class="panel-collapse collapse">
 										      <div class="panel-body">
-										      	<p>The perfect harmony between innovation and creativity, our bathroom tiles are produced in compliance with the international standards. High quality 20mm thick porcelain tiles that can be laid on pedestals,</p>
+										      	<p>我们猜测可能是您的爱兔生病了或者因为环境因素，引起了应激反应，我们拥有着专业的宠物医生，免费为您的爱兔治疗</p>
 										      </div>
 										    </div>
 										  </div> <!-- /panel 3 -->
@@ -364,7 +362,7 @@
 							<div id="client-review-slider" class="owl-carousel owl-theme">
 								<div class="item">
 									<div class="clearfix">
-										<img src="images/home/img-8.jpg" alt="" class="float-left">
+										<img src="/static/images/home/img-8.jpg" alt="" class="float-left">
 										<div class="name float-left">
 											<h6>Mahfuz Riad</h6>
 											<p>CEO, Company</p>
@@ -376,7 +374,7 @@
 								</div> <!-- /.item -->
 								<div class="item">
 									<div class="clearfix">
-										<img src="images/home/img-9.jpg" alt="" class="float-left">
+										<img src="/static/images/home/img-9.jpg" alt="" class="float-left">
 										<div class="name float-left">
 											<h6>Abdur Rob</h6>
 											<p>CEO, Developer</p>
@@ -388,7 +386,7 @@
 								</div> <!-- /.item -->
 								<div class="item">
 									<div class="clearfix">
-										<img src="images/home/img-8.jpg" alt="" class="float-left">
+										<img src="/static/images/home/img-8.jpg" alt="" class="float-left">
 										<div class="name float-left">
 											<h6>Mahfuz Riad</h6>
 											<p>CEO, Company</p>
@@ -409,11 +407,11 @@
 				<div class="container">
 					<div class="">
 						<div id="partner-logo" class="owl-carousel owl-theme">
-							<div class="item"><div><img src="images/home/slide-logo-1.png" alt="logo"></div></div>
-							<div class="item"><div><img src="images/home/slide-logo-2.png" alt="logo"></div></div>
-							<div class="item"><div><img src="images/home/slide-logo-3.png" alt="logo"></div></div>
-							<div class="item"><div><img src="images/home/slide-logo-4.png" alt="logo"></div></div>
-							<div class="item"><div><img src="images/home/slide-logo-2.png" alt="logo"></div></div>
+							<div class="item"><div><img src="/static/images/home/slide-logo-1.png" alt="logo"></div></div>
+							<div class="item"><div><img src="/static/images/home/slide-logo-2.png" alt="logo"></div></div>
+							<div class="item"><div><img src="/static/images/home/slide-logo-3.png" alt="logo"></div></div>
+							<div class="item"><div><img src="/static/images/home/slide-logo-4.png" alt="logo"></div></div>
+							<div class="item"><div><img src="/static/images/home/slide-logo-2.png" alt="logo"></div></div>
 						</div> <!-- End .partner_logo -->
 					</div>
 				</div>
@@ -424,7 +422,7 @@
 				<div class="container">
 					<div class="top-footer row">
 						<div class="col-md-5 col-sm-7 col-xs-12 footer-logo">
-							<a href="#"><img src="images/them-logo/them-main-logo-2.jpg" alt="Logo"></a>
+							<a href="#"><img src="/static/images/them-logo/them-main-logo-2.jpg" alt="Logo"></a>
 							<p><span class="p-color">myPet</span> was established in 2017 by Pet business veterans, Rod Davies and Matthew Levington, the journey began when founders Matthew Levington and Rod Davies, met up in 2017 over a beer</p>
 							<ul class="icon">
 								<li><a href="" class="tran3s"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -507,29 +505,29 @@
 
 		<!-- js file -->
 		<!-- Main js file/jquery -->
-		<script src="vendor/jquery-2.2.3.min.js"></script>
+		<script src="/static/vendor/jquery-2.2.3.min.js"></script>
 		<!-- bootstrap-select.min.js -->
-		<script src="vendor/bootstrap-select-1.10.0/dist/js/bootstrap-select.min.js"></script>
+		<script src="/static/vendor/bootstrap-select-1.10.0/dist/js/bootstrap-select.min.js"></script>
 		<!-- bootstrap js -->
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
 		<!-- camera js -->
-		<script src="vendor/Camera-master/scripts/camera.min.js"></script>
-		<script src="vendor/Camera-master/scripts/jquery.easing.1.3.js"></script>
+		<script src="/static/vendor/Camera-master/scripts/camera.min.js"></script>
+		<script src="/static/vendor/Camera-master/scripts/jquery.easing.1.3.js"></script>
 		<!-- Owl carousel -->
-		<script src="vendor/OwlCarousel2/dist/owl.carousel.min.js"></script>
+		<script src="/static/vendor/OwlCarousel2/dist/owl.carousel.min.js"></script>
 		<!-- appear & countTo -->
-		<script src="vendor/jquery.appear.js"></script>
-		<script src="vendor/jquery.countTo.js"></script>
+		<script src="/static/vendor/jquery.appear.js"></script>
+		<script src="/static/vendor/jquery.countTo.js"></script>
 		<!-- fancybox -->
-		<script src="vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+		<script src="/static/vendor/fancybox/dist/jquery.fancybox.min.js"></script>
 		<!-- Gallery - isotop -->
-		<script type="text/javascript" src="vendor/isotope.pkgd.min.js"></script>
+		<script type="text/javascript" src="/static/vendor/isotope.pkgd.min.js"></script>
 		<!-- WOW js -->
-		<script type="text/javascript" src="vendor/WOW-master/dist/wow.min.js"></script>
+		<script type="text/javascript" src="/static/vendor/WOW-master/dist/wow.min.js"></script>
 		<!-- Circle Progress -->
-		<script type="text/javascript" src="vendor/circle-progress.js"></script>
+		<script type="text/javascript" src="/static/vendor/circle-progress.js"></script>
 		<!-- Style js -->
-		<script src="js/custom.js"></script>
+		<script src="/static/js/custom.js"></script>
 
 	</body>
 </html>

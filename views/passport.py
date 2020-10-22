@@ -1,4 +1,4 @@
-from flask import request
+from flask import request,jsonify,session,redirect,url_for,make_response
 from . import passport_blu
 
 from models import db
@@ -18,8 +18,11 @@ def register():
 
     # 2. 创建一个新的用户
     # 2.1 先查询是否有这个相同的用户
-    if db.session.query(User).filter().first():
-        return "已经注册"
+    if db.session.query(User).filter(User.mobile == mobile).first():
+        return jsonify({
+            "errno": 1001,
+            "errmsg": "已经注册..."
+        })
 
     # 2.2 注册用户
     # 将新用户的数据插入到数据库
@@ -30,14 +33,58 @@ def register():
     try:
         db.session.add(user)
         db.session.commit()
-        ret = "注册成功..."
+
+        # 注册成功之后，立刻认为登录成功，也就说需要进行状态保持
+        session['user_id'] = user.id
+        session['nick_name'] = mobile
+
+        ret = {
+            "errno": 0,
+            "errmsg": "注册成功..."
+        }
+
     except Exception as ret:
         print("---->", ret)
         db.session.rollback()  # 如果在将用户的信
-        ret = "注册失败..."
+        ret = {
+            "errno": 1002,
+            "errmsg": "注册失败..."
+        }
 
-    return ret
+    return jsonify(ret)
 
+
+@passport_blu.route("/passport/login", methods=['GET','POST'])
+def login():
+    # 1. 提取登录时的用户名，密码
+    mobile = request.json.get("mobile")
+    password = request.json.get("password")
+
+    # 2. 查询，如果存在表示登录成功，否则失败
+    user = db.session.query(User).filter(User.mobile == mobile, User.password_hash == password).first()
+    if user:
+        ret = {
+            "errno": 0,
+            "errmsg": "登录成功"
+        }
+
+        session['user_id'] = user.id
+        session['nick_name'] = mobile
+    else:
+        ret = {
+            "errno": 2001,
+            "errmsg": "用户名或者密码错误"
+        }
+
+    return jsonify(ret)
+
+
+@passport_blu.route("/passport/logout")
+def logout():
+    # 清空登录状态
+    session.clear()
+
+    return redirect(url_for('index_blu.index'))
 
 
 

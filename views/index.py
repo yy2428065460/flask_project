@@ -1,10 +1,14 @@
-from flask import render_template
+from flask import render_template,session
 from . import index_blu
 
 
 @index_blu.route("/")
 def index():
-    return render_template("index.html")
+    # 查询用户是否已经登录
+    user_id = session.get("user_id", 0)
+    nick_name = session.get("nick_name", "")
+
+    return render_template("index.html",nick_name=nick_name)
 
 
 @index_blu.route("/index/gallery.html")

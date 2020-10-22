@@ -10,3 +10,4 @@ def index():
 @index_blu.route("/index/gallery.html")
 def gallery():
     return render_template("gallery.html")
+

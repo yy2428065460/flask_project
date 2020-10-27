@@ -6,7 +6,7 @@
 
 ###### 宠物护理商城
 
-![](https://gitee.com/YANGYUE0205/flask_images/blob/master/Snipaste_2020-10-19_10-04-53.png)
+![](https://github.com/yy2428065460/flask_images/blob/master/Snipaste_2020-10-20_08-44-04.png)
 
 
 

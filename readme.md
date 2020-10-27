@@ -48,15 +48,15 @@
 
 - 在视图函数中使用render_template可以调用前端主页和画廊页面，在浏览器中显示。
 
-- ![](C:\Users\24280\Desktop\flaskproject\效果图片\Snipaste_2020-10-20_08-44-04.png)
+- ![](效果图片\Snipaste_2020-10-20_08-44-04.png)
 
   
 
-  ![](C:\Users\24280\Desktop\flaskproject\效果图片\Snipaste_2020-10-20_08-44-57.png)
+  ![](效果图片\Snipaste_2020-10-20_08-44-57.png)
 
     
 
-  ![](C:\Users\24280\Desktop\flaskproject\效果图片\Snipaste_2020-10-20_08-45-09.png)
+  ![](效果图片\Snipaste_2020-10-20_08-45-09.png)
 
 
 
@@ -65,11 +65,11 @@
 - 修改html文件，右上角显示登录注册按钮
 - 下载登录注册模板，点击右上角可以进入登录/注册页面
 - 因为下载的模板js文件有缺失，在编写中。。。
-- ![](C:\Users\24280\Desktop\flaskproject\效果图片\Snipaste_2020-10-21_08-02-03.png)
+- ![](效果图片\Snipaste_2020-10-21_08-02-03.png)
 
 
 
-![](C:\Users\24280\Desktop\flaskproject\效果图片\Snipaste_2020-10-21_08-02-21.png)
+![](效果图片\Snipaste_2020-10-21_08-02-21.png)
 
 
 
@@ -83,13 +83,13 @@
 
 - 
 
-  ![](C:\Users\24280\Desktop\flaskproject\效果图片\Snipaste_2020-10-22_21-26-33.png)
+  ![](效果图片\Snipaste_2020-10-22_21-26-33.png)
 
 
 
 ​	
 
-​	![](C:\Users\24280\Desktop\flaskproject\效果图片\Snipaste_2020-10-22_21-27-18.png)
+​	![](效果图片\Snipaste_2020-10-22_21-27-18.png)
 
 
 
@@ -98,11 +98,11 @@
 - 建立新的一张商品表，
 - 填写数据，
 - 将数据表中的数据正确在网页上显示。
-- ![](C:\Users\24280\Desktop\flaskproject\效果图片\Snipaste_2020-10-27_08-23-50.png)
+- ![](效果图片\Snipaste_2020-10-27_08-23-50.png)
 
 
 
-​				![](C:\Users\24280\Desktop\flaskproject\效果图片\Snipaste_2020-10-27_08-30-27.png)
+​   ![](效果图片\Snipaste_2020-10-27_08-30-27.png)
 
 
 
@@ -110,7 +110,7 @@
 
 - 创建team护理团队表，
 - 链接数据表正确的显示在网页上，
-- ![](C:\Users\24280\Desktop\flaskproject\效果图片\Snipaste_2020-10-27_08-23-23.png)
+- ![](效果图片\Snipaste_2020-10-27_08-23-23.png)
 
 
 

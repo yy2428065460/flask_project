@@ -1,4 +1,4 @@
-from flask import request,jsonify,session,redirect,url_for,make_response
+from flask import request,jsonify,session,redirect,url_for,make_response,render_template
 from . import passport_blu
 
 from models import db
@@ -109,3 +109,4 @@ def image_code():
     resp.headers['Content-Type'] = 'image/png'
 
     return resp
+

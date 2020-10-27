@@ -23,3 +23,36 @@ class User(db.Model):
         ),
         default="MAN"
     )
+
+
+class Team(db.Model):
+    """护理团队"""
+    __tablename__ = 'team'
+
+    id = db.Column(db.Integer, primary_key=True)  # 成员编号
+    member_name = db.Column(db.String(32), unique=True, nullable=False)  # 成员姓名
+    member_mobile = db.Column(db.String(11), unique=True, nullable=False)  # 手机号
+    skill = db.Column(db.String(128))  # 职业技能
+    detail = db.Column(db.String(256))
+    avatar_url = db.Column(db.String(255))
+
+
+class Shop(db.Model):
+    """商品表"""
+
+    __tablename__ = 'shop'
+
+    id = db.Column(db.Integer, primary_key=True)
+    shop_name = db.Column(db.String(32), unique=True, nullable=False)  # 商品名
+    price = db.Column(db.String(11), unique=True, nullable=False)  # 价格
+    pic_url = db.Column(db.String(255))  # 商品图片路径
+    category_id = db.Column(db.Integer, db.ForeignKey("category.id"))
+
+
+class Category(db.Model):
+    """分类表"""
+
+    __tablename__ = "category"
+
+    id = db.Column(db.Integer, unique=True, primary_key=True)  # 分类编号
+    category_name = db.Column(db.String(64), nullable=False)  # 分类名

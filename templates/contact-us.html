@@ -7,12 +7,12 @@
 		<!-- For IE -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title>ChinaZ</title>
+		<title>联系我们</title>
 		
 		<!-- Main style sheet -->
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="/static/css/style.css">
 		<!-- responsive style sheet -->
-		<link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="/static/css/responsive.css">
 
 		<!-- Fix Internet Explorer ______________________________________-->
 
@@ -33,8 +33,8 @@
 					<div class="container">
 						<div class="clear-fix">
 							<ul class="float-left top-header-left">
-								<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> FoodFarm, W 35th St, New York</a></li>
-								<li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> mypet_info@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> 传智专修学院</a></li>
+								<li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> yy2428065460@gmail.com</a></li>
 							</ul>
 							<ul class="float-right top-header-right">
 								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -57,7 +57,7 @@
 					   			<div class="search-box tran5s" id="searchWrapper">
 					   				<button id="close-button" class="p-color"><i class="fa fa-times" aria-hidden="true"></i></button>
 					   				<div class="container">
-					   					<img src="images/them-logo/them-main-logo-1.png" alt="Logo">
+					   					<img src="/static/images/them-logo/them-main-logo-1.png" alt="Logo">
 					   					<form action="#">
 					   						<input type="text" placeholder="Search....">
 					   						<button class="p-bg-color"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -65,7 +65,7 @@
 					   				</div>
 					   			</div> <!-- /.search-box -->
 					   		</div> <!-- /.right-content -->
-					   		<div class="them-logo float-left"><a href="#"><img src="images/them-logo/them-main-logo-1.jpg" alt="logo"></a></div>
+					   		<div class="them-logo float-left"><a href="#"><img src="/static/images/them-logo/them-main-logo-1.jpg" alt="logo"></a></div>
 
 							<!-- Menu -->
 							<nav class="navbar">
@@ -82,13 +82,13 @@
 								<!-- Collect the nav links, forms, and other content for toggling -->
 								<div class="collapse navbar-collapse" id="navbar-collapse-1">
 									<ul class="nav navbar-nav">
-										<li><a href="index.html">Home</a></li>
-										<li><a href="gallery.html">Gallery</a></li>
-									    <li><a href="about-us.html">About</a></li>
-										<li><a href="team.html">Team</a></li>
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="shop-details.html">Shop Details</a></li>
-										<li><a href="contact-us.html">Contact</a></li>
+										<li><a href="{{ url_for('index_blu.index') }}">主页</a></li>
+										<li><a href="{{ url_for('index_blu.gallery') }}">画廊</a></li>
+									    <li><a href="{{ url_for('index_blu.about') }}">关于我们</a></li>
+										<li><a href="{{ url_for('index_blu.team_data') }}">护理团队</a></li>
+										<li><a href="{{ url_for('index_blu.shop') }}">购买</a></li>
+										<li><a href="{{ url_for('index_blu.shop_details') }}">店铺详情</a></li>
+										<li><a href="{{ url_for('index_blu.contact_us') }}">联系我们</a></li>
 									</ul>
 								</div><!-- /.navbar-collapse -->
 							</nav>
@@ -106,17 +106,10 @@
 								<div class="row">
 									<div class="col-sm-8 col-xs-12">
 										<div class="">
-											<h1>Contact Us</h1>
-											<p>Pet lovers rely on Becky’s Pet Care for professional dog walking and pet sitting.</p>
-										</div>
-									</div>
-									<div class="col-sm-4 col-xs-12">
-										<div class="">
-											<a href="#" class="hvr-float-shadow">Get A Quote</a>
+											<h1>联系我们</h1>
 										</div>
 									</div>
 								</div>
-								<img src="images/about/dog-1.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -124,9 +117,7 @@
 				<div class="inner-banner-bottom">
 					<div class="container">
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><span>-</span></li>
-							<li><a href="index.html">Page</a></li>
+							<li><a href="/">Home</a></li>
 							<li><span>-</span></li>
 							<li><a href="#">Contact Page</a></li>
 						</ul>
@@ -139,65 +130,48 @@
 				<div class="container">
 					<div class="services-details-help">
 						<div class="">
-							<h3>Call (+880) 1912704287 to learn how we can help you give your pet the best possible care</h3>
-							<p>Or fill out our New Client Form to get started.</p>
+							<h3>致电(+86)19852744199了解我们如何帮助您为宠物提供最佳护理</h3>
+							<p>或填写我们的新客户表格以开始使用。</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-6 col-xs-12 float-right">
 							<div class="get-in-touch-with-us">
-								<h5>Contact us</h5>
-								<p>Get in Touch With Us</p>
+								<h5>联系我们</h5>
+								<p>请与我们联系</p>
 								<ul>
 									<li>
-										<img src="images/them-logo/icon-1.png" alt="icon">
+										<img src="/static/images/them-logo/icon-1.png" alt="icon">
 										<h6>Visit Our Place</h6>
-										<span>56/1 Theme Name Discover Street</span>
-										<span>New York, NY 10012, USA</span>
+										<span>二号楼1001室。</span>
+										<span>翻斗大街翻斗花园</span>
 									</li>
 									<li>
-										<img src="images/them-logo/icon-2.png" alt="icon">
-										<h6>Quick Contact</h6>
-										<span>Ph: +88 01912704287</span>
-										<span>Email:  help@mypet.com</span>
+										<img src="/static/images/them-logo/icon-2.png" alt="icon">
+										<h6>快速联络</h6>
+										<span>Ph: +86 19852744199</span>
+										<span>Email: yy24228065460@gmail.com</span>
 									</li>
 									<li>
-										<img src="images/them-logo/icon-3.png" alt="icon">
-										<h6>Office Schedule</h6>
-										<span>Monday to Saturday: 09.00am to 18.00pm</span>
-										<span>Sunday: Closed</span>
+										<img src="/static/images/them-logo/icon-3.png" alt="icon">
+										<h6>办公室时间表</h6>
+										<span>周一至周六：09：00am至18.00pm</span>
+										<span>周日：休息</span>
 									</li>
 								</ul>
 							</div>
 						</div>
 						<div class="col-md-6 col-xs-12">
 							<div class="contact-form">
-								<h5>Drop us a line</h5>
-								<form action="inc/sendemail.php" class="form-validation" autocomplete="off">
-									<input type="text" placeholder="You Name *" name="name">
-									<input type="email" placeholder="You Email Address *" name="email">
-									<input type="text" placeholder="Subject" name="sub">
-									<textarea placeholder="You Message *" name="message"></textarea>
-									<button class="hvr-float-shadow">Send Request</button>
+								<h5>给我们留言</h5>
+								<form class="form-validation" autocomplete="off">
+									<input type="text" placeholder="您的名字 *" name="name">
+									<input type="email" placeholder="您的电子邮件 *" name="email">
+									<input type="text" placeholder="学科/职业 *" name="sub">
+									<textarea placeholder="您的留言 *" name="message"></textarea>
+									<button class="hvr-float-shadow">提交</button>
 								</form>
-								<!-- Contact Form Validation Markup -->
-								<!-- Contact alert -->
-								<div class="alert-wrapper" id="alert-success">
-									<div id="success">
-										<button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
-										<div class="wrapper">
-							               	<p>Your message was sent successfully.</p>
-							             </div>
-							        </div>
-							    </div> <!-- End of .alert_wrapper -->
-							    <div class="alert-wrapper" id="alert-error">
-							        <div id="error">
-							           	<button class="closeAlert"><i class="fa fa-times" aria-hidden="true"></i></button>
-							           	<div class="wrapper">
-							               	<p>Sorry!Something Went Wrong.</p>
-							            </div>
-							        </div>
-							    </div> <!-- End of .alert_wrapper -->
+
 							</div>
 						</div>
 					</div>
@@ -214,11 +188,11 @@
 				<div class="container">
 					<div class="">
 						<div id="partner-logo" class="owl-carousel owl-theme">
-							<div class="item"><div><img src="images/home/slide-logo-1.png" alt="logo"></div></div>
-							<div class="item"><div><img src="images/home/slide-logo-2.png" alt="logo"></div></div>
-							<div class="item"><div><img src="images/home/slide-logo-3.png" alt="logo"></div></div>
-							<div class="item"><div><img src="images/home/slide-logo-4.png" alt="logo"></div></div>
-							<div class="item"><div><img src="images/home/slide-logo-2.png" alt="logo"></div></div>
+							<div class="item"><div><img src="/static/images/home/slide-logo-1.png" alt="logo"></div></div>
+							<div class="item"><div><img src="/static/images/home/slide-logo-2.png" alt="logo"></div></div>
+							<div class="item"><div><img src="/static/images/home/slide-logo-3.png" alt="logo"></div></div>
+							<div class="item"><div><img src="/static/images/home/slide-logo-4.png" alt="logo"></div></div>
+							<div class="item"><div><img src="/static/images/home/slide-logo-2.png" alt="logo"></div></div>
 						</div> <!-- End .partner_logo -->
 					</div>
 				</div>
@@ -229,8 +203,8 @@
 				<div class="container">
 					<div class="top-footer row">
 						<div class="col-md-5 col-sm-7 col-xs-12 footer-logo">
-							<a href="#"><img src="images/them-logo/them-main-logo-2.jpg" alt="Logo"></a>
-							<p><span class="p-color">myPet</span> was established in 2017 by Pet business veterans, Rod Davies and Matthew Levington, the journey began when founders Matthew Levington and Rod Davies, met up in 2017 over a beer</p>
+							<a href="#"><img src="/static/images/them-logo/them-main-logo-2.jpg" alt="Logo"></a>
+							<p><span class="p-color">myPet</span> 由YY超人和他的团队于2018年创立的，在此前，YY超人和他的团队伙伴们已经以团队的形式帮助了许多的宠物和。</p>
 							<ul class="icon">
 								<li><a href="" class="tran3s"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a href="" class="tran3s"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
@@ -272,11 +246,11 @@
 
 							<ul>
 								<li>
-									<h6><a href="#" class="tran3s">Prefinished Solid Hardwood Flooring</a></h6>
+									<h6><a href="#" class="tran3s">网上宠物医生来了！！！</a></h6>
 									<span>january 02,2017</span>
 								</li>
 								<li>
-									<h6><a href="#" class="tran3s">Latst pet care in summer 12 care them well</a></h6>
+									<h6><a href="#" class="tran3s">在夏天要好好护理您的宠物哦。</a></h6>
 									<span>january 02,2017</span>
 								</li>
 							</ul>
@@ -286,7 +260,7 @@
 
 				<div class="bottom-footer">
 					<div class="container">
-						<p class="float-left">Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+						<p class="float-left">Copyright &copy; 2017.Company name All rights reserved.</p>
 						<form action="#" class="float-right">
 							<input type="text" placeholder="Your Email">
 							<button class="tran3s p-bg-color">Subscribe</button>
@@ -312,37 +286,37 @@
 
 		<!-- js file -->
 		<!-- Main js file/jquery -->
-		<script src="vendor/jquery-2.2.3.min.js"></script>
+		<script src="/static/vendor/jquery-2.2.3.min.js"></script>
 		<!-- bootstrap-select.min.js -->
-		<script src="vendor/bootstrap-select-1.10.0/dist/js/bootstrap-select.min.js"></script>
+		<script src="/static/vendor/bootstrap-select-1.10.0/dist/js/bootstrap-select.min.js"></script>
 		<!-- bootstrap js -->
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
 		<!-- camera js -->
-		<script src="vendor/Camera-master/scripts/camera.min.js"></script>
-		<script src="vendor/Camera-master/scripts/jquery.easing.1.3.js"></script>
+		<script src="/static/vendor/Camera-master/scripts/camera.min.js"></script>
+		<script src="/static/vendor/Camera-master/scripts/jquery.easing.1.3.js"></script>
 		<!-- Owl carousel -->
-		<script src="vendor/OwlCarousel2/dist/owl.carousel.min.js"></script>
+		<script src="/static/vendor/OwlCarousel2/dist/owl.carousel.min.js"></script>
 		<!-- appear & countTo -->
-		<script src="vendor/jquery.appear.js"></script>
-		<script src="vendor/jquery.countTo.js"></script>
+		<script src="/static/vendor/jquery.appear.js"></script>
+		<script src="/static/vendor/jquery.countTo.js"></script>
 		<!-- fancybox -->
-		<script src="vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+		<script src="/static/vendor/fancybox/dist/jquery.fancybox.min.js"></script>
 		<!-- Gallery - isotop -->
-		<script type="text/javascript" src="vendor/isotope.pkgd.min.js"></script>
+		<script type="text/javascript" src="/static/vendor/isotope.pkgd.min.js"></script>
 		<!-- WOW js -->
-		<script type="text/javascript" src="vendor/WOW-master/dist/wow.min.js"></script>
+		<script type="text/javascript" src="/static/vendor/WOW-master/dist/wow.min.js"></script>
 		<!-- Circle Progress -->
-		<script type="text/javascript" src="vendor/circle-progress.js"></script>
+		<script type="text/javascript" src="/static/vendor/circle-progress.js"></script>
 		<!-- Validation -->
-		<script type="text/javascript" src="vendor/contact-form/validate.js"></script>
-		<script type="text/javascript" src="vendor/contact-form/jquery.form.js"></script>
+		<script type="text/javascript" src="/static/vendor/contact-form/validate.js"></script>
+		<script type="text/javascript" src="/static/vendor/contact-form/jquery.form.js"></script>
 		<!-- Google map js -->
 		<!---<script src="http://ditu.google.cn/maps/api/js?key=AIzaSyCjQLCCbRKFhsr8BY78g2PQ0_bTyrm_YXU" type="text/javascript"></script>
 		<script src="vendor/sanzzy-map/dist/snazzy-info-window.min.js"></script>--->
 		<!-- Style js -->
-		<script src="js/custom.js"></script>
+		<script src="/static/js/custom.js"></script>
 		<!-- map script js -->
-		<script type="text/javascript" src="js/map-script.js"></script>
+		<script type="text/javascript" src="/static/js/map-script.js"></script>
 
 	</body>
 </html>

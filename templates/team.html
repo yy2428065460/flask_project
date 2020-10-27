@@ -7,12 +7,16 @@
 		<!-- For IE -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title>ChinaZ</title>
+		<title>护理团队</title>
 		
 		<!-- Main style sheet -->
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="/static/css/style.css">
 		<!-- responsive style sheet -->
-		<link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="/static/css/responsive.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+        <script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript" src="/static/js/main.js"></script>
 
 		<!-- Fix Internet Explorer ______________________________________-->
 
@@ -33,15 +37,19 @@
 					<div class="container">
 						<div class="clear-fix">
 							<ul class="float-left top-header-left">
-								<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> FoodFarm, W 35th St, New York</a></li>
-								<li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> mypet_info@gmail.com</a></li>
-							</ul>
-							<ul class="float-right top-header-right">
-								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
-							</ul>
+								<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> 传智专修学院</a></li>
+								<li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> yy2428065460@gmail.com</a></li>
+							{% if not nick_name %}
+							<div class="float-right ">
+                                <a href="javascript:;" class="login_btn">登录</a> / <a href="javascript:;" class="register_btn">注册</a>
+                            </div>
+							{% else %}
+                            <div class="user_login fr">
+                                <img src="/static/images/cat.jpg" class="lgin_pic" >
+                                <a href="" >{{ nick_name }}</a>
+                                <a href="/passport/logout">退出</a>
+							</div>
+                            {% endif %}
 						</div>
 					</div>
 				</div>
@@ -57,7 +65,7 @@
 					   			<div class="search-box tran5s" id="searchWrapper">
 					   				<button id="close-button" class="p-color"><i class="fa fa-times" aria-hidden="true"></i></button>
 					   				<div class="container">
-					   					<img src="images/them-logo/them-main-logo-1.png" alt="Logo">
+					   					<img src="/static/images/them-logo/them-main-logo-1.png" alt="Logo">
 					   					<form action="#">
 					   						<input type="text" placeholder="Search....">
 					   						<button class="p-bg-color"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -65,7 +73,7 @@
 					   				</div>
 					   			</div> <!-- /.search-box -->
 					   		</div> <!-- /.right-content -->
-					   		<div class="them-logo float-left"><a href="#"><img src="images/them-logo/them-main-logo-1.jpg" alt="logo"></a></div>
+					   		<div class="them-logo float-left"><a href="#"><img src="/static/images/them-logo/them-main-logo-1.jpg" alt="logo"></a></div>
 
 							<!-- Menu -->
 							<nav class="navbar">
@@ -82,13 +90,13 @@
 								<!-- Collect the nav links, forms, and other content for toggling -->
 								<div class="collapse navbar-collapse" id="navbar-collapse-1">
 									<ul class="nav navbar-nav">
-										<li><a href="index.html">Home</a></li>
-										<li><a href="gallery.html">Gallery</a></li>
-									    <li><a href="about-us.html">About</a></li>
-										<li><a href="team.html">Team</a></li>
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="shop-details.html">Shop Details</a></li>
-										<li><a href="contact-us.html">Contact</a></li>
+										<li><a href="{{ url_for('index_blu.index') }}">主页</a></li>
+										<li><a href="{{ url_for('index_blu.gallery') }}">画廊</a></li>
+									    <li><a href="{{ url_for('index_blu.about') }}">关于我们</a></li>
+										<li><a href="{{ url_for('index_blu.team_data') }}">护理团队</a></li>
+										<li><a href="{{ url_for('index_blu.shop') }}">购买</a></li>
+										<li><a href="{{ url_for('index_blu.shop_details') }}">店铺详情</a></li>
+										<li><a href="{{ url_for('index_blu.contact_us') }}">联系我们</a></li>
 									</ul>
 								</div><!-- /.navbar-collapse -->
 							</nav>
@@ -106,17 +114,16 @@
 								<div class="row">
 									<div class="col-sm-8 col-xs-12">
 										<div class="">
-											<h1>Talent Team</h1>
-											<p>Pet lovers rely on Becky’s Pet Care for professional dog walking and pet sitting.</p>
+											<h1>人才团队</h1>
+											<p>宠物爱好者依赖Becak的宠物护理专业遛狗和照顾宠物。</p>
 										</div>
 									</div>
 									<div class="col-sm-4 col-xs-12">
 										<div class="">
-											<a href="#" class="hvr-float-shadow">Get A Quote</a>
+											<a href="#" class="hvr-float-shadow">购买</a>
 										</div>
 									</div>
 								</div>
-								<img src="images/about/dog-1.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -124,11 +131,9 @@
 				<div class="inner-banner-bottom">
 					<div class="container">
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<li><a href="/">主页</a></li>
 							<li><span>-</span></li>
-							<li><a href="index.html">Page</a></li>
-							<li><span>-</span></li>
-							<li><a href="#">Team</a></li>
+							<li><a href="#">护理团队</a></li>
 						</ul>
 					</div>
 				</div>
@@ -138,130 +143,126 @@
 			<section class="our-team-section">
 				<div class="container">
 					<div class="inner-title-one">
-						<h2>Your pet is in good hands with a team of professional</h2>
+						<h2>你的宠物在一组专业人员的悉心照料下</h2>
 						<span></span>
-						<p>In a professional context it often happens that private or corporate clients order a publication to be made and presented with the actual content still not being ready.</p>
+						<p>我们拥有者20年专业的护理团队，他们分工明确，将无微不至的关爱您的爱宠。</p>
 					</div>
-					<div class="row">
+{#					<div class="row">#}
+{#                        {% for t in team %}#}
+{#						<div class="col-md-4 col-xs-6 team-item-width">#}
+{#							<div class="team-item">#}
+{#								<div class="team-img">#}
+{#									<img src="/static/images/team/saber.jpg" alt="image">#}
+{#									<div class="">#}
+{#										<a href="/static/images/team/saber.jpg" class="fancybox"><i class="flaticon-picture"></i></a>#}
+{#									</div>#}
+{#								</div>#}
+{#								<div class="team-text" id="team_id=1">#}
+{#									<h5>{{ t.member_name }}</h5>#}
+{#									<p>{{ t.skill }}</p>#}
+{#									<ul>#}
+{#										<p>{{ t.detail }}</p>#}
+{#									</ul>#}
+{#								</div>#}
+{#							</div>#}
+{#                            {% endfor %}#}
+{#						</div>#}
+                        {% for t in team %}
 						<div class="col-md-4 col-xs-6 team-item-width">
 							<div class="team-item">
 								<div class="team-img">
-									<img src="images/team/img-1.jpg" alt="image">
+									<img src="{{ t.avatar_url }}" alt="image">
 									<div class="">
-										<a href="images/team/img-1.jpg" class="fancybox"><i class="flaticon-picture"></i></a>
+										<a href="{{ t.avatar_url }}" class="fancybox"><i class="flaticon-picture"></i></a>
 									</div>
 								</div>
-								<div class="team-text">
-									<h5>Mariya sonika</h5>
-									<p>VETERINARIAN</p>
-									<ul>
-										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
-									</ul>
+								<div class="team-text" id="t.team_id=1">
+									<h5>{{ t.member_name }}</h5>
+									<p>{{ t.skill }}</p>
+									<p>{{ t.detail }}</p>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-4 col-xs-6 team-item-width">
-							<div class="team-item">
-								<div class="team-img">
-									<img src="images/team/img-2.jpg" alt="image">
-									<div class="">
-										<a href="images/team/img-2.jpg" class="fancybox"><i class="flaticon-picture"></i></a>
-									</div>
-								</div>
-								<div class="team-text">
-									<h5>Mahfuz Riad</h5>
-									<p>TRAINER</p>
-									<ul>
-										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-xs-6 team-item-width">
-							<div class="team-item">
-								<div class="team-img">
-									<img src="images/team/img-3.jpg" alt="image">
-									<div class="">
-										<a href="images/team/img-3.jpg" class="fancybox"><i class="flaticon-picture"></i></a>
-									</div>
-								</div>
-								<div class="team-text">
-									<h5>Foqrul Vai</h5>
-									<p>NUTRITIONIST</p>
-									<ul>
-										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-xs-6 team-item-width">
-							<div class="team-item">
-								<div class="team-img">
-									<img src="images/team/img-4.jpg" alt="image">
-									<div class="">
-										<a href="images/team/img-4.jpg" class="fancybox"><i class="flaticon-picture"></i></a>
-									</div>
-								</div>
-								<div class="team-text">
-									<h5>Zubayr Al</h5>
-									<p>GROOMER</p>
-									<ul>
-										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-xs-6 team-item-width">
-							<div class="team-item">
-								<div class="team-img">
-									<img src="images/team/img-5.jpg" alt="image">
-									<div class="">
-										<a href="images/team/img-5.jpg" class="fancybox"><i class="flaticon-picture"></i></a>
-									</div>
-								</div>
-								<div class="team-text">
-									<h5>Rashed Ka</h5>
-									<p>VETERINARIAN CU</p>
-									<ul>
-										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-4 col-xs-6 team-item-width">
-							<div class="team-item">
-								<div class="team-img">
-									<img src="images/team/img-6.jpg" alt="image">
-									<div class="">
-										<a href="images/team/img-6.jpg" class="fancybox"><i class="flaticon-picture"></i></a>
-									</div>
-								</div>
-								<div class="team-text">
-									<h5>Nam Nei</h5>
-									<p>Cat Care LT</p>
-									<ul>
-										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
-									</ul>
-								</div>
-							</div>
+                        {% endfor %}
+{#						<div class="col-md-4 col-xs-6 team-item-width">#}
+{#							<div class="team-item">#}
+{#								<div class="team-img">#}
+{#									<img src="/static/images/team/dog.jpg" alt="image">#}
+{#									<div class="">#}
+{#										<a href="/static/images/team/dog.jpg" class="fancybox"><i class="flaticon-picture"></i></a>#}
+{#									</div>#}
+{#								</div>#}
+{#								<div class="team-text">#}
+{#									<h5>Foqrul Vai</h5>#}
+{#									<p>营养学家</p>#}
+{#									<ul>#}
+{#										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>#}
+{#										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>#}
+{#										<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>#}
+{#										<li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>#}
+{#									</ul>#}
+{#								</div>#}
+{#							</div>#}
+{#						</div>#}
+{#						<div class="col-md-4 col-xs-6 team-item-width">#}
+{#							<div class="team-item">#}
+{#								<div class="team-img">#}
+{#									<img src="/static/images/team/eliya.jpg" alt="image">#}
+{#									<div class="">#}
+{#										<a href="/static/images/team/eliya.jpg" class="fancybox"><i class="flaticon-picture"></i></a>#}
+{#									</div>#}
+{#								</div>#}
+{#								<div class="team-text">#}
+{#									<h5>Zubayr Al</h5>#}
+{#									<p>美容师</p>#}
+{#									<ul>#}
+{#										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>#}
+{#										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>#}
+{#										<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>#}
+{#										<li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>#}
+{#									</ul>#}
+{#								</div>#}
+{#							</div>#}
+{#						</div>#}
+{#						<div class="col-md-4 col-xs-6 team-item-width">#}
+{#							<div class="team-item">#}
+{#								<div class="team-img">#}
+{#									<img src="/static/images/team/yb10032.jpg" alt="image">#}
+{#									<div class="">#}
+{#										<a href="/static/images/team/yb10032.jpg" class="fancybox"><i class="flaticon-picture"></i></a>#}
+{#									</div>#}
+{#								</div>#}
+{#								<div class="team-text">#}
+{#									<h5>Rashed Ka</h5>#}
+{#									<p>兽医</p>#}
+{#									<ul>#}
+{#										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>#}
+{#										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>#}
+{#										<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>#}
+{#										<li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>#}
+{#									</ul>#}
+{#								</div>#}
+{#							</div>#}
+{#						</div>#}
+{#						<div class="col-md-4 col-xs-6 team-item-width">#}
+{#							<div class="team-item">#}
+{#								<div class="team-img">#}
+{#									<img src="/static/images/team/daiwei.jpg" alt="image">#}
+{#									<div class="">#}
+{#										<a href="/static/images/team/daiwei.jpg" class="fancybox"><i class="flaticon-picture"></i></a>#}
+{#									</div>#}
+{#								</div>#}
+{#								<div class="team-text">#}
+{#									<h5>Nam Nei</h5>#}
+{#									<p>猫咪护理师</p>#}
+{#									<ul>#}
+{#										<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>#}
+{#										<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>#}
+{#										<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>#}
+{#										<li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>#}
+{#									</ul>#}
+{#								</div>#}
+{#							</div>#}
 						</div>
 					</div>
 				</div>
@@ -272,11 +273,11 @@
 				<div class="container">
 					<div class="">
 						<div id="partner-logo" class="owl-carousel owl-theme">
-							<div class="item"><div><img src="images/home/slide-logo-1.png" alt="logo"></div></div>
-							<div class="item"><div><img src="images/home/slide-logo-2.png" alt="logo"></div></div>
-							<div class="item"><div><img src="images/home/slide-logo-3.png" alt="logo"></div></div>
-							<div class="item"><div><img src="images/home/slide-logo-4.png" alt="logo"></div></div>
-							<div class="item"><div><img src="images/home/slide-logo-2.png" alt="logo"></div></div>
+							<div class="item"><div><img src="/static/images/home/slide-logo-1.png" alt="logo"></div></div>
+							<div class="item"><div><img src="/static/images/home/slide-logo-2.png" alt="logo"></div></div>
+							<div class="item"><div><img src="/static/images/home/slide-logo-3.png" alt="logo"></div></div>
+							<div class="item"><div><img src="/static/images/home/slide-logo-4.png" alt="logo"></div></div>
+							<div class="item"><div><img src="/static/images/home/slide-logo-2.png" alt="logo"></div></div>
 						</div> <!-- End .partner_logo -->
 					</div>
 				</div>
@@ -287,8 +288,8 @@
 				<div class="container">
 					<div class="top-footer row">
 						<div class="col-md-5 col-sm-7 col-xs-12 footer-logo">
-							<a href="#"><img src="images/them-logo/them-main-logo-2.jpg" alt="Logo"></a>
-							<p><span class="p-color">myPet</span> was established in 2017 by Pet business veterans, Rod Davies and Matthew Levington, the journey began when founders Matthew Levington and Rod Davies, met up in 2017 over a beer</p>
+							<a href="#"><img src="/static/images/them-logo/them-main-logo-2.jpg" alt="Logo"></a>
+							<p><span class="p-color">myPet</span>由YY超人和他的团队于2018年创立的，在此前，YY超人和他的团队伙伴们已经以团队的形式帮助了许多的宠物。</p>
 							<ul class="icon">
 								<li><a href="" class="tran3s"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a href="" class="tran3s"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
@@ -308,7 +309,7 @@
 
 							<ul>
 								<li><a href="#" class="tran3s">Support</a></li>
-								<li><a href="#" class="tran3s">About us </a></li>
+								<li><a href="/index/about-us.html" class="tran3s">about-us </a></li>
 								<li><a href="#" class="tran3s">Project</a></li>
 								<li><a href="shop.html" class="tran3s">Shop</a></li>
 								<li><a href="#" class="tran3s">Performance</a></li>
@@ -330,11 +331,11 @@
 
 							<ul>
 								<li>
-									<h6><a href="#" class="tran3s">Prefinished Solid Hardwood Flooring</a></h6>
+									<h6><a href="#" class="tran3s">网上宠物医生来了！！！</a></h6>
 									<span>january 02,2017</span>
 								</li>
 								<li>
-									<h6><a href="#" class="tran3s">Latst pet care in summer 12 care them well</a></h6>
+									<h6><a href="#" class="tran3s">在夏天要好好护理您的宠物哦。</a></h6>
 									<span>january 02,2017</span>
 								</li>
 							</ul>
@@ -344,7 +345,7 @@
 
 				<div class="bottom-footer">
 					<div class="container">
-						<p class="float-left">Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+						<p class="float-left">Copyright &copy; 2017.Company name All rights reserved.</p>
 						<form action="#" class="float-right">
 							<input type="text" placeholder="Your Email">
 							<button class="tran3s p-bg-color">Subscribe</button>
@@ -370,30 +371,97 @@
 
 		<!-- js file -->
 		<!-- Main js file/jquery -->
-		<script src="vendor/jquery-2.2.3.min.js"></script>
+		<script src="/static/vendor/jquery-2.2.3.min.js"></script>
 		<!-- bootstrap-select.min.js -->
-		<script src="vendor/bootstrap-select-1.10.0/dist/js/bootstrap-select.min.js"></script>
+		<script src="/static/vendor/bootstrap-select-1.10.0/dist/js/bootstrap-select.min.js"></script>
 		<!-- bootstrap js -->
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
 		<!-- camera js -->
-		<script src="vendor/Camera-master/scripts/camera.min.js"></script>
-		<script src="vendor/Camera-master/scripts/jquery.easing.1.3.js"></script>
+		<script src="/static/vendor/Camera-master/scripts/camera.min.js"></script>
+		<script src="/static/vendor/Camera-master/scripts/jquery.easing.1.3.js"></script>
 		<!-- Owl carousel -->
-		<script src="vendor/OwlCarousel2/dist/owl.carousel.min.js"></script>
+		<script src="/static/vendor/OwlCarousel2/dist/owl.carousel.min.js"></script>
 		<!-- appear & countTo -->
-		<script src="vendor/jquery.appear.js"></script>
-		<script src="vendor/jquery.countTo.js"></script>
+		<script src="/static/vendor/jquery.appear.js"></script>
+		<script src="/static/vendor/jquery.countTo.js"></script>
 		<!-- fancybox -->
-		<script src="vendor/fancybox/dist/jquery.fancybox.min.js"></script> <!-- video -->
-		<script src="vendor/fancybox/jquery.fancybox.pack.js"></script> <!-- image -->
+		<script src="/static/vendor/fancybox/dist/jquery.fancybox.min.js"></script> <!-- video -->
+		<script src="/static/vendor/fancybox/jquery.fancybox.pack.js"></script> <!-- image -->
 		<!-- Gallery - isotop -->
-		<script type="text/javascript" src="vendor/isotope.pkgd.min.js"></script>
+		<script type="text/javascript" src="/static/vendor/isotope.pkgd.min.js"></script>
 		<!-- WOW js -->
-		<script type="text/javascript" src="vendor/WOW-master/dist/wow.min.js"></script>
+		<script type="text/javascript" src="/static/vendor/WOW-master/dist/wow.min.js"></script>
 		<!-- Circle Progress -->
-		<script type="text/javascript" src="vendor/circle-progress.js"></script>
+		<script type="text/javascript" src="/static/vendor/circle-progress.js"></script>
 		<!-- Style js -->
-		<script src="js/custom.js"></script>
+		<script src="/static/js/custom.js"></script>
+
+
+    <form class="login_form_con">
+        <div class="login_form">
+            <div class="login_title">
+                <h3>登 录</h3>
+                <a href="javascript:;" class="shutoff"></a>
+            </div>
+            <div class="form_group">
+                <input id="mobile" type="text" name="mobile" autocomplete="off">
+                <div class="input_tip">手机号</div>
+                <div id="login-mobile-err" class="error_tip">手机号不能为空</div>
+            </div>
+            <div class="form_group">
+                <input id="password" type="password" name="password">
+                <div class="input_tip">密码</div>
+                <div id="login-password-err" class="error_tip">密码不能为空</div>
+            </div>
+            <input type="submit" name="" value="登 录" class="input_sub">
+            <div class="down_link">还没有账号？<a href="javascript:;" class="to_register">立即注册</a></div>
+            </div>
+        <div class="mask"></div>
+    </form>
+
+<!-- 注册表单 -->
+    <form class="register_form_con">
+        <div class="register_form">
+            <div class="register_title">
+                <h3>注 册</h3>
+                <a href="javascript:;" class="shutoff"></a>
+            </div>
+            <div class="form_group">
+                <input type="text" name="mobile" autocomplete="off" id="register_mobile" class="phone_input">
+                <div class="input_tip">手机号</div>
+                <div id="register-mobile-err" class="error_tip">手机号不能为空</div>
+            </div>
+            <div class="form_group">
+                <input type="text" name="code_pwd" id="image_code" class="code_pwd">
+                <div class="input_tip">图形验证码</div>
+                <img src="/static/images/pic_code.png" class="get_pic_code" onclick="generateImageCode()">
+                <div id="register-image-code-err" class="error_tip">图形码不能为空</div>
+            </div>
+            <div class="form_group">
+                <input type="text" name="smscode" id="smscode" class="code_pwd">
+                <div class="input_tip">手机验证码</div>
+                <a href="javascript:;" class="get_code" onclick="sendSMSCode()">点击获取验证码</a>
+                <div id="register-sms-code-err" class="error_tip">验证码不能为空</div>
+            </div>
+            <div class="form_group">
+                <input type="password" name="password" id="register_password" class="pass_input">
+                <div class="input_tip">密码(不少于六位数)</div>
+                <div id="register-password-err" class="error_tip">密码不能为空</div>
+            </div>
+            <div class="form_group2 clearfix">
+                <input type="checkbox" class="agree_input" checked>
+                <p>同意使用条款，并已阅读"跟帖评论自律管理承诺书"</p>
+                <div class="error_tip">请勾选</div>
+            </div>
+            <input type="submit" name="" value="注 册" class="input_sub">
+            <div class="down_link">已有账号？<a href="javascript:;" class="to_login">立即登录</a></div>
+        </div>
+        <div class="mask"></div>
+    </form>
+        <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
+        <script type="text/javascript">
+            L2Dwidget.init();
+        </script>
 
 	</body>
 </html>

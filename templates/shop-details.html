@@ -7,12 +7,12 @@
 		<!-- For IE -->
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<title>ChinaZ</title>
+		<title>店铺详情</title>
 		
 		<!-- Main style sheet -->
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="/static/css/style.css">
 		<!-- responsive style sheet -->
-		<link rel="stylesheet" href="css/responsive.css">
+		<link rel="stylesheet" href="/static/css/responsive.css">
 
 		<!-- Fix Internet Explorer ______________________________________-->
 
@@ -33,8 +33,8 @@
 					<div class="container">
 						<div class="clear-fix">
 							<ul class="float-left top-header-left">
-								<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> FoodFarm, W 35th St, New York</a></li>
-								<li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> mypet_info@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> 传智专修学院</a></li>
+								<li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> yy2428065460@gmail.com</a></li>
 							</ul>
 							<ul class="float-right top-header-right">
 								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -57,7 +57,7 @@
 					   			<div class="search-box tran5s" id="searchWrapper">
 					   				<button id="close-button" class="p-color"><i class="fa fa-times" aria-hidden="true"></i></button>
 					   				<div class="container">
-					   					<img src="images/them-logo/them-main-logo-1.png" alt="Logo">
+					   					<img src="/static/images/them-logo/them-main-logo-1.png" alt="Logo">
 					   					<form action="#">
 					   						<input type="text" placeholder="Search....">
 					   						<button class="p-bg-color"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -65,7 +65,7 @@
 					   				</div>
 					   			</div> <!-- /.search-box -->
 					   		</div> <!-- /.right-content -->
-					   		<div class="them-logo float-left"><a href="#"><img src="images/them-logo/them-main-logo-1.jpg" alt="logo"></a></div>
+					   		<div class="them-logo float-left"><a href="#"><img src="/static/images/them-logo/them-main-logo-1.jpg" alt="logo"></a></div>
 
 							<!-- Menu -->
 							<nav class="navbar">
@@ -82,13 +82,13 @@
 								<!-- Collect the nav links, forms, and other content for toggling -->
 								<div class="collapse navbar-collapse" id="navbar-collapse-1">
 									<ul class="nav navbar-nav">
-										<li><a href="index.html">Home</a></li>
-										<li><a href="gallery.html">Gallery</a></li>
-									    <li><a href="about-us.html">About</a></li>
-										<li><a href="team.html">Team</a></li>
-										<li><a href="shop.html">Shop</a></li>
-										<li><a href="shop-details.html">Shop Details</a></li>
-										<li><a href="contact-us.html">Contact</a></li>
+										<li><a href="{{ url_for('index_blu.index') }}">主页</a></li>
+										<li><a href="{{ url_for('index_blu.gallery') }}">画廊</a></li>
+									    <li><a href="{{ url_for('index_blu.about') }}">关于我们</a></li>
+										<li><a href="{{ url_for('index_blu.team_data') }}">护理团队</a></li>
+										<li><a href="{{ url_for('index_blu.shop') }}">购买</a></li>
+										<li><a href="{{ url_for('index_blu.shop_details') }}">店铺详情</a></li>
+										<li><a href="{{ url_for('index_blu.contact_us') }}">联系我们</a></li>
 									</ul>
 								</div><!-- /.navbar-collapse -->
 							</nav>
@@ -106,17 +106,10 @@
 								<div class="row">
 									<div class="col-sm-8 col-xs-12">
 										<div class="">
-											<h1>Shop Details</h1>
-											<p>Pet lovers rely on Becky’s Pet Care for professional dog walking and pet sitting.</p>
-										</div>
-									</div>
-									<div class="col-sm-4 col-xs-12">
-										<div class="">
-											<a href="#" class="hvr-float-shadow">Get A Quote</a>
+											<h1>店铺详情</h1>
 										</div>
 									</div>
 								</div>
-								<img src="images/about/dog-1.png" alt="">
 							</div>
 						</div>
 					</div>
@@ -124,11 +117,9 @@
 				<div class="inner-banner-bottom">
 					<div class="container">
 						<ul>
-							<li><a href="index.html">Home</a></li>
+							<li><a href="/">主页</a></li>
 							<li><span>-</span></li>
-							<li><a href="index.html">Page</a></li>
-							<li><span>-</span></li>
-							<li><a href="#">Shop Details</a></li>
+							<li><a href="#">店铺详情</a></li>
 						</ul>
 					</div>
 				</div>
@@ -140,22 +131,22 @@
 					<div class="single-product-details">
 						<div class="row">
 							<div class="col-sm-6 col-xs-12 product-order-img">
-								<div class="vig-img"><img src="images/shop/img-20.jpg" alt="image"></div>
+								<div class="vig-img"><img src="/static/images/shop/img-20.jpg" alt="image"></div>
 								<div class="row">
 									<div class="col-xs-4">
-										<div><img src="images/shop/img-21.jpg" alt="image"></div>
+										<div><img src="/static/images/shop/img-21.jpg" alt="image"></div>
 									</div>
 									<div class="col-xs-4">
-										<div><img src="images/shop/img-22.jpg" alt="image"></div>
+										<div><img src="/static/images/shop/img-22.jpg" alt="image"></div>
 									</div>
 									<div class="col-xs-4">
-										<div><img src="images/shop/img-23.jpg" alt="image"></div>
+										<div><img src="/static/images/shop/img-23.jpg" alt="image"></div>
 									</div>
 								</div>
 							</div>
 							<div class="col-sm-6 col-xs-12">
 								<div class="product-order-details">
-									<h5>Royal Canin Maxi Digestive Care 15 KG</h5>
+									<h5>Royal Canin Maxi 消化护理15kg</h5>
 									<ul class="price">
 										<li>$68</li>
 										<li><del>$98</del></li>
@@ -169,31 +160,15 @@
 											<li><i class="fa fa-star" aria-hidden="true"></i></li>
 											<li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
 										</ul>
-										<ul class="tag">
-											<li>Categories:  <span class="p-color">Organic Pasta,</span></li>
-										</ul>
 									</div>
-									<p>Complete feed for dogs - For adult and mature large breed dogs (from 26 to 44 kg). Reinforced digestive tolerance thanks to very high quality protein sources and MOS which promote a balance in the intestinal flora and improve stool quality.</p>
+									<p>狗的完全饲料-为成年和成熟的大型犬(26 - 44公斤)。由于高质量的蛋白质来源和MOS，促进肠道菌群的平衡和改善粪便质量，增强消化耐受性。</p>
 									<div class="value-decrease-and-button">
-										<div class="content-and-select">
-											<span>Content</span>
-											<ul class="select-section">
-												<li>
-													<select class="selectpicker">
-														<option>Choose on option</option>
-														<option>By Price</option>
-														<option>By Category</option>
-														<option>By Date</option>
-													</select>
-												</li>
-											</ul> <!-- /.top-select-section -->
-										</div>
 										<ul class="value-section">
 											<li><button class="tran3s" id="value-decrease"><i class="fa fa-minus" aria-hidden="true"></i></button> </li>
 											<li id="product-value">1</li>
 											<li><button class="tran3s" id="value-increase"><i class="fa fa-plus" aria-hidden="true"></i></button> </li>
 										</ul>
-										<a href="#" class="hvr-float-shadow">Add To Cart</a>
+										<a href="#" class="hvr-float-shadow">加入购物车</a>
 									</div>
 								</div> <!-- /.product-order-details -->
 							</div> <!-- /.single-product-details -->
@@ -203,98 +178,63 @@
 							<div class="col-md-9 col-xs-12">
 								<div class="review-tab">
 									<ul class="nav nav-tabs">
-										<li class="active"><a data-toggle="tab" href="#home">Product Description</a></li>
-										<li><a data-toggle="tab" href="#menu1">Additional information</a></li>
-										<li><a data-toggle="tab" href="#menu2">Reviews (1)</a></li>
+										<li class="active"><a data-toggle="tab" href="#home">产品描述</a></li>
+										<li><a data-toggle="tab" href="#menu1">附加信息</a></li>
 									</ul>
 									<div class="tab-content">
 										<div id="home" class="tab-pane fade in active">
-									    	<p>Complete feed for dogs - For adult and mature large breed dogs (from 26 to 44 kg). Over 15 months old. Digestive sensitivity</p>
-									    	<h6>Digestive Health</h6>
-									    	<p>Reinforced digestive tolerance thanks to very high quality protein sources and MOS which promote a balance in the intestinal flora and improve stool quality.</p>
+									    	<p>狗的完全饲料-为成年和成熟的大型犬(26 - 44公斤)。超过15个月。消化的敏感性</p>
+									    	<h6>消化健康</h6>
+									    	<p>由于高质量的蛋白质来源和MOS，促进肠道菌群的平衡和改善粪便质量，增强消化耐受性。</p>
 										</div>
 									  	<div id="menu1" class="tab-pane fade">
-									    	<h4>Ten steps to making </h4>
-									    	<ul>
-									    		<li>1. Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-									    		<li>2. Suspendisse accumsan nunc velit, vel ullamcorper</li>
-									    		<li>3. Quisque mollis tellus diam, non blandit magna accumsan quis.</li>
-									    		<li>4. Sed ultricies eleifend felis pretium cursus.</li>
-									    		<li>5. Lorem ipsum dolor sit amet, consectetur adipiscing elit</li>
-									    		<li>6. Suspendisse accumsan nunc velit, vel ullamcorper</li>
-									    		<li>7. Quisque mollis tellus diam, non blandit magna accumsan quis.</li>
-									    		<li>8. Sed ultricies eleifend felis pretium cursus.</li>
-									    	</ul>
-									  	</div>
-									  	<div id="menu2" class="tab-pane fade">
-									    	<div id="review">
-												<div class="single-review clearfix">
-													<img src="images/home/img-5.jpg" alt="" class="float-left">
-													<div class="text float-left">
-														<div class="clearfix">
-															<div class="float-left">
-																<span>March 14, 2017</span>
-																<span>10 days ago</span>
-																<h6>Lindsay Lohan</h6>
-															</div>
-															<ul class="float-right">
-																<li><i class="fa fa-star" aria-hidden="true"></i></li>
-																<li><i class="fa fa-star" aria-hidden="true"></i></li>
-																<li><i class="fa fa-star" aria-hidden="true"></i></li>
-																<li><i class="fa fa-star" aria-hidden="true"></i></li>
-																<li><i class="fa fa-star" aria-hidden="true"></i></li>
-															</ul>
-														</div> <!-- /.clearfix -->
-														<p>I am glad that I have taken the PHP Framework course here at Scholar. The teacher has been amazing throughtout the course. They have outstanding resources to  help you. In addition.</p>
-													</div> <!-- /.text -->
-												</div> <!-- /.single-review -->
-											</div> <!-- /.review -->
+									    	<h4>现在下单购买此商品还有机会获得我们送出的免单活动哦！！！</h4>
 									  	</div>
 									</div>
 								</div> <!-- /.review-tab -->
 								<div class="pluses-item-and-progress">
-									<h6>PLUSES ITEM</h6>
+									<h6>剩余存货</h6>
 									<div class="progress">
 									  <div class="progress-bar progress-bar-striped active" role="progressbar"
 									  aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
 									    90%
 									  </div>
 									</div>
-									<p>Composition: dehydrated poultry protein, rice, wheat flour, animal fats, vegetable protein isolate*, wheat, barley, maize gluten, hydrolysed animal proteins, vegetable fibres, beet pulp, fish oil, soya oil, minerals, psyllium husks and seeds, borage oil, hydrolysed crustaceans (source of glucosamine), hydrolysed cartilage (source of chondroitin).</p>
+									<p>成分:脱水家禽蛋白、大米、小麦粉、动物脂肪、植物分离蛋白*、小麦、大麦、玉米面筋、水解动物蛋白、植物纤维、甜菜浆、鱼油、大豆油、矿物质、车前草壳和种子、琉璃苣油、水解甲壳动物(葡萄糖胺来源)、水解软骨(软骨素来源)。</p>
 								</div>
 								<div class="delivery">
-									<h6>Delivery to UK</h6>
-									<p>To the UK Orders of £30 or more are delivered FREE to the UK. Orders below this amount will have a delivery charge of $4.95.</p>
-									<p>Additives (per kg):Nutritional additives: Vitamin A: 19000 IU, Vitamin D3: 800 IU, E1 (Iron): 41 mg, E2 (Iodine): 4.1 mg, E4 (Copper): 8 mg, E5 (Manganese): 53 mg, E6 (Zinc): 159 mg, E8 (Selenium): 0.07 mg -Preservatives - Antioxidants.</p>
-									<p>Analytical Constituents: Protein: 28% - Fat content: 18% - Crude ash: 5.9% - Crude fibres: 2.9% - Per kg: Manno-oligo-saccharides: 0.5 g - Omega 6 fatty acids:35.2 g. *L.I.P.: protein selected for its very high assimilation.</p>
+									<h6>运送到英国</h6>
+									<p>到英国30英镑或以上的订单免费送货到英国。低于此金额的订单将收取$ 4.95的送货费。</p>
+									<p>添加剂（每千克）：营养添加剂：维生素A：19000 IU，维生素D3：800 IU，E1（铁）：41 mg，E2（碘）：4.1 mg，E4（铜）：8 mg，E5（锰）： 53毫克，E6（锌）：159毫克，E8（硒）：0.07毫克-防腐剂-抗氧化剂。</p>
+									<p>分析成分：蛋白质：28％-脂肪含量：18％-粗灰分：5.9％-粗纤维：2.9％-每千克：甘露寡糖：0.5 g-ω6脂肪酸：35.2 g。* LIP：因具有极高的同化作用而选择的蛋白质。</p>
 								</div>
 								<div class="related-product">
-									<h5>Related product</h5>
+									<h5>相关产品</h5>
 									<div class="row">
 										<div class="col-sm-3 col-xs-6">
 											<div class="related-product-item text-center">
-												<div><img src="images/shop/img-23.jpg" alt="image"></div>
+												<div><img src="/static/images/shop/img-23.jpg" alt="image"></div>
 												<a href="#">Smart Dog</a>
 												<span>$ 43</span>
 											</div>
 										</div>
 										<div class="col-sm-3 col-xs-6">
 											<div class="related-product-item text-center">
-												<div><img src="images/shop/img-24.jpg" alt="image"></div>
+												<div><img src="/static/images/shop/img-24.jpg" alt="image"></div>
 												<a href="#">Smart Cat</a>
 												<span>$ 34</span>
 											</div>
 										</div>
 										<div class="col-sm-3 col-xs-6">
 											<div class="related-product-item text-center">
-												<div><img src="images/shop/img-25.jpg" alt="image"></div>
+												<div><img src="/static/images/shop/img-25.jpg" alt="image"></div>
 												<a href="#">Dry Tech Pads</a>
 												<span>$ 13</span>
 											</div>
 										</div>
 										<div class="col-sm-3 col-xs-6">
 											<div class="related-product-item text-center">
-												<div><img src="images/shop/img-26.jpg" alt="image"></div>
+												<div><img src="/static/images/shop/img-26.jpg" alt="image"></div>
 												<a href="#">Cucumber</a>
 												<span>$ 24</span>
 											</div>
@@ -312,8 +252,8 @@
 				<div class="container">
 					<div class="top-footer row">
 						<div class="col-md-5 col-sm-7 col-xs-12 footer-logo">
-							<a href="#"><img src="images/them-logo/them-main-logo-2.jpg" alt="Logo"></a>
-							<p><span class="p-color">myPet</span> was established in 2017 by Pet business veterans, Rod Davies and Matthew Levington, the journey began when founders Matthew Levington and Rod Davies, met up in 2017 over a beer</p>
+							<a href="#"><img src="/static/images/them-logo/them-main-logo-2.jpg" alt="Logo"></a>
+							<p><span class="p-color">myPet</span> 由YY超人和他的团队于2018年创立的，在此前，YY超人和他的团队伙伴们已经以团队的形式帮助了许多的宠物。</p>
 							<ul class="icon">
 								<li><a href="" class="tran3s"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a href="" class="tran3s"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
@@ -355,11 +295,11 @@
 
 							<ul>
 								<li>
-									<h6><a href="#" class="tran3s">Prefinished Solid Hardwood Flooring</a></h6>
+									<h6><a href="#" class="tran3s">网上宠物医生来了！！！</a></h6>
 									<span>january 02,2017</span>
 								</li>
 								<li>
-									<h6><a href="#" class="tran3s">Latst pet care in summer 12 care them well</a></h6>
+									<h6><a href="#" class="tran3s">在夏天要好好护理您的宠物哦。</a></h6>
 									<span>january 02,2017</span>
 								</li>
 							</ul>
@@ -369,7 +309,7 @@
 
 				<div class="bottom-footer">
 					<div class="container">
-						<p class="float-left">Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+						<p class="float-left">Copyright &copy; 2017.Company name All rights reserved</p>
 						<form action="#" class="float-right">
 							<input type="text" placeholder="Your Email">
 							<button class="tran3s p-bg-color">Subscribe</button>
@@ -395,29 +335,29 @@
 
 		<!-- js file -->
 		<!-- Main js file/jquery -->
-		<script src="vendor/jquery-2.2.3.min.js"></script>
+		<script src="/static/vendor/jquery-2.2.3.min.js"></script>
 		<!-- bootstrap-select.min.js -->
-		<script src="vendor/bootstrap-select-1.10.0/dist/js/bootstrap-select.min.js"></script>
+		<script src="/static/vendor/bootstrap-select-1.10.0/dist/js/bootstrap-select.min.js"></script>
 		<!-- bootstrap js -->
-		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
 		<!-- camera js -->
-		<script src="vendor/Camera-master/scripts/camera.min.js"></script>
-		<script src="vendor/Camera-master/scripts/jquery.easing.1.3.js"></script>
+		<script src="/static/vendor/Camera-master/scripts/camera.min.js"></script>
+		<script src="/static/vendor/Camera-master/scripts/jquery.easing.1.3.js"></script>
 		<!-- Owl carousel -->
-		<script src="vendor/OwlCarousel2/dist/owl.carousel.min.js"></script>
+		<script src="/static/vendor/OwlCarousel2/dist/owl.carousel.min.js"></script>
 		<!-- appear & countTo -->
-		<script src="vendor/jquery.appear.js"></script>
-		<script src="vendor/jquery.countTo.js"></script>
+		<script src="/static/vendor/jquery.appear.js"></script>
+		<script src="/static/vendor/jquery.countTo.js"></script>
 		<!-- fancybox -->
-		<script src="vendor/fancybox/dist/jquery.fancybox.min.js"></script>
+		<script src="/static/vendor/fancybox/dist/jquery.fancybox.min.js"></script>
 		<!-- Gallery - isotop -->
-		<script type="text/javascript" src="vendor/isotope.pkgd.min.js"></script>
+		<script type="text/javascript" src="/static/vendor/isotope.pkgd.min.js"></script>
 		<!-- WOW js -->
-		<script type="text/javascript" src="vendor/WOW-master/dist/wow.min.js"></script>
+		<script type="text/javascript" src="/static/vendor/WOW-master/dist/wow.min.js"></script>
 		<!-- Circle Progress -->
-		<script type="text/javascript" src="vendor/circle-progress.js"></script>
+		<script type="text/javascript" src="/static/vendor/circle-progress.js"></script>
 		<!-- Style js -->
-		<script src="js/custom.js"></script>
+		<script src="/static/js/custom.js"></script>
 
 	</body>
 </html>

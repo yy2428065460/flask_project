@@ -90,13 +90,13 @@
 								<!-- Collect the nav links, forms, and other content for toggling -->
 								<div class="collapse navbar-collapse" id="navbar-collapse-1">
 									<ul class="nav navbar-nav">
-										<li><a href="/">主页</a></li>
-										<li><a href="/index/gallery.html">画廊</a></li>
-									    <li><a href="/index/about-us.html">关于我们</a></li>
-										<li><a href="/templates/team.html">护理团队</a></li>
-										<li><a href="/templates/shop.html">购买</a></li>
-										<li><a href="/templates/shop-details.html">店铺详情</a></li>
-										<li><a href="/templates/contact-us.html">联系我们</a></li>
+										<li><a href="{{ url_for('index_blu.index') }}">主页</a></li>
+										<li><a href="{{ url_for('index_blu.gallery') }}">画廊</a></li>
+									    <li><a href="{{ url_for('index_blu.about') }}">关于我们</a></li>
+										<li><a href="{{ url_for('index_blu.team_data') }}">护理团队</a></li>
+										<li><a href="{{ url_for('index_blu.shop') }}">购买</a></li>
+										<li><a href="{{ url_for('index_blu.shop_details') }}">店铺详情</a></li>
+										<li><a href="{{ url_for('index_blu.contact_us') }}">联系我们</a></li>
 									</ul>
 								</div><!-- /.navbar-collapse -->
 							</nav>
@@ -591,7 +591,7 @@
 
 				<div class="bottom-footer">
 					<div class="container">
-						<p class="float-left">Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+						<p class="float-left">Copyright &copy; 2017.Company name All rights reserved.</p>
 						<form action="#" class="float-right">
 							<input type="text" placeholder="Your Email">
 							<button class="tran3s p-bg-color">Subscribe</button>

@@ -7,3 +7,19 @@ $(function (event) {
     };
    event.stopPropagation();
 });
+
+$(function(){
+	$('#shop_details').click(function () {
+			// 请求`退出登录`
+		$.ajax({
+			url: '/index/shop_details',
+			type: 'get',
+			success: function (resp) {
+				if (resp.errno == 0) {
+					window.location.href='shop_details.html'
+					alert('123')
+				}
+			}
+		})
+	})
+})

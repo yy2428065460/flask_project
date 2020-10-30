@@ -160,14 +160,14 @@
 								<div class="shop-item-product-wrapper">
 									<div class="shop-item-product">
 										<div class="clear-fix">
-											<a href="#" class="float-left"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
+											<a href="javascript:;" class="collection block-center" data-news-id="{{ shops.id }}">收藏</a>
 											<a href="#" class="float-right"><i class="flaticon-shopping-bag"></i></a>
 										</div>
 										<div class="product">
 											<img src="{{ s.pic_url }}" alt="image">
 										</div>
 										<div class="price-and-taitle">
-											<h5><a href="shop-details.html">{{ s.shop_name }}</a></h5>
+											<h5><a href="{{ url_for('index_blu.shop_details') }}" id="shop_details">{{ s.shop_name }}</a></h5>
 											<span>{{ s.price }}</span>
 										</div>
 									</div>
@@ -270,7 +270,7 @@
 		</div>
 	
 
-
+        <script type="text/javascript" src="/static/js/detail.js"></script>
 		<!-- js file -->
 		<!-- Main js file/jquery -->
 		<script src="/static/vendor/jquery-2.2.3.min.js"></script>

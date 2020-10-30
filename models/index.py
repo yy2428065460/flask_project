@@ -3,6 +3,15 @@ from datetime import datetime
 from . import db
 
 
+class Collection(db.Model):
+
+    __tablename__ = "collection"
+
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), primary_key=True)  # 新闻编号
+    shop_id = db.Column(db.Integer, db.ForeignKey("shop.id"), primary_key=True)  # 分类编号
+    create_time = db.Column(db.DateTime, default=datetime.now)  # 收藏创建时间
+
+
 class User(db.Model):
     """用户"""
     __tablename__ = "user"
@@ -23,6 +32,10 @@ class User(db.Model):
         ),
         default="MAN"
     )
+    collection_news = db.relationship("Shop",
+                                      secondary=Collection.__table__,
+                                      backref=db.backref('collected_user', lazy='dynamic'),
+                                      lazy='dynamic')
 
 
 class Team(db.Model):
@@ -56,3 +69,5 @@ class Category(db.Model):
 
     id = db.Column(db.Integer, unique=True, primary_key=True)  # 分类编号
     category_name = db.Column(db.String(64), nullable=False)  # 分类名
+
+

@@ -2431,5 +2431,144 @@ footer .bottom-footer form button {
 	background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 80%);
 }
 
+.minicart {
+  border: 1px solid #e5e5e5;
+  padding: 20px;
+  width: 290px;
+  background: #ffffff;
+  text-align: left;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
 
+.minicart .minicart-product-list {
+  padding-left: 0;
+  margin-bottom: 0;
+  max-height: 165px;
+  overflow-y: auto;
+}
+
+.minicart .minicart-product-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  list-style: none;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.minicart .minicart-product-list li:first-child {
+  padding-top: 0;
+}
+
+.minicart .minicart-product-list li .minicart-product-image {
+  display: inline-block;
+  border: 1px solid #e5e5e5;
+  position: relative;
+  width: 50px;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50px;
+  flex: 0 0 50px;
+  margin-right: 10px;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+}
+
+.minicart .minicart-product-list li .minicart-product-image:hover {
+  border-color: #e34691;
+}
+
+.minicart .minicart-product-list li .minicart-product-image span.quantity {
+  background: -webkit-gradient(linear, left top, left bottom, from(#626262), to(#2f2f2f));
+  background: -webkit-linear-gradient(#626262, #2f2f2f);
+  background: -o-linear-gradient(#626262, #2f2f2f);
+  background: linear-gradient(#626262, #2f2f2f);
+  border-radius: 40px;
+  color: #fff;
+  font-family: Carrois Gothic, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  height: 20px;
+  left: -10px;
+  line-height: 20px;
+  overflow: visible;
+  position: absolute;
+  text-align: center;
+  top: -10px;
+  width: 20px;
+  z-index: 1;
+}
+
+.minicart .minicart-product-list li .minicart-product-details {
+  -ms-flex-negative: 100;
+  flex-shrink: 100;
+  width: 100%;
+  margin-right: 10px;
+}
+
+.minicart .minicart-product-list li .minicart-product-details h6 {
+  color: #333333;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+  margin: 0 0 5px;
+  text-align: left;
+}
+
+.minicart .minicart-product-list li .minicart-product-details h6 a {
+  color: #333333;
+}
+
+.minicart .minicart-product-list li .minicart-product-details h6 a:hover {
+  color: #e34691;
+}
+
+.minicart .minicart-product-list li button.close {
+  -webkit-box-flex: 100;
+  -ms-flex-positive: 100;
+  flex-grow: 100;
+  background: none;
+  color: #777777;
+  display: block;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.minicart .minicart-product-list li button.close:hover {
+  color: #e34691;
+}
+
+.minicart .minicart-total {
+  border: none;
+  color: #555555;
+  font-size: 14px;
+  line-height: 40px;
+  margin: 0 0 15px;
+  padding: 0 10px;
+  text-transform: uppercase;
+  width: 100%;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  margin-top: 10px;
+}
+
+.minicart .minicart-total span {
+  font-size: 18px;
+  float: right;
+}
+
+.minicart .minicart-button {
+  padding: 0;
+}
+
+.minicart .minicart-button .sf-button + .sf-button {
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 575px) {
+}
 /*-------------------------------------------------------------------------------------------------------------*/

@@ -1,9 +1,8 @@
-from flask import render_template,session
+from flask import render_template,session,request,redirect,url_for
 
 from models import db
 from . import index_blu
 from models.index import Team, Shop, Category
-
 
 @index_blu.route("/")
 def index():
@@ -50,7 +49,7 @@ def shop():
     return render_template("shop.html", shops=shops, shops_id=shops_id, price=price, pic_url=pic_url, categorys=categorys, c_id=c_id, category_name=category_name)
 
 
-@index_blu.route("/index/shop-details.html")
+@index_blu.route("/index/shop-details", methods=['GET', 'POST'])
 def shop_details():
     return render_template("shop-details.html")
 
@@ -58,3 +57,27 @@ def shop_details():
 @index_blu.route("/index/contact-us.html")
 def contact_us():
     return render_template("contact-us.html")
+
+
+@index_blu.route('/index/user.html')
+def user():
+    return render_template("user.html")
+
+
+@index_blu.route('/index/shopping_cart', methods=['GET', 'POST'])
+def shopping_cart():
+    return render_template("shopping_cart.html")
+
+
+@index_blu.route('/index/order', methods=['GET', 'POST'])
+def order():
+    if request.method=="POST":
+        return redirect(url_for('index_blu.commit'))
+    else:
+        return render_template("order.html")
+
+
+@index_blu.route('/index/commit', methods=['GET', 'POST'])
+def commit():
+    print('123')
+    return render_template("commit.html")

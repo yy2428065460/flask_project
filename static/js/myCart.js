@@ -87,7 +87,6 @@ $(function(){
 				if (resp.errno == 0) {
 					# ³É¹¦
 					window.location.href='order.html'
-					alert('123')
 				}
 			}
 		})

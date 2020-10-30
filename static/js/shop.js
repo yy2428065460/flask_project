@@ -17,7 +17,6 @@ $(function(){
 			success: function (resp) {
 				if (resp.errno == 0) {
 					window.location.href='shop_details.html'
-					alert('123')
 				}
 			}
 		})

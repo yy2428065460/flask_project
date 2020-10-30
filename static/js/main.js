@@ -117,7 +117,7 @@ $(function(){
 
 		// 取到用户输入的内容
         var mobile = $("#register_mobile").val();  // 提取手机号
-        var imageCode = $("#imagecode").val();  // 提取图片验证码
+        var imageCode = $("#image_code").val();  // 提取图片验证码
         var smscode = $("#smscode").val();  // 提取短信验证码
         var password = $("#register_password").val();  // 提取密码
 
@@ -217,7 +217,7 @@ function sendSMSCode() {
         $(".get_code").attr("onclick", "sendSMSCode();");
         return;
     }
-    var imageCode = $("#imagecode").val();
+    var imageCode = $("#image_code").val();
     if (!imageCode) {
         $("#register-mobile-err").html("");
         $("#register-mobile-err").hide();

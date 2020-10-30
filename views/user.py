@@ -107,7 +107,6 @@ def user_pic_info():
     return render_template("user_pic_info.html", user=user)
 
 
-
 @user_blu.route("/user/avatar", methods=['POST'])
 def user_avatar():
     f = request.files.get("avatar")

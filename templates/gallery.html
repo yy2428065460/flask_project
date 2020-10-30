@@ -13,6 +13,9 @@
 		<link rel="stylesheet" href="/static/css/style.css">
 		<!-- responsive style sheet -->
 		<link rel="stylesheet" href="/static/css/responsive.css">
+        <link rel="stylesheet" href="/static/css/main.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+        <script type="text/javascript" src="/static/js/main.js"></script>
 
 		<!-- Fix Internet Explorer ______________________________________-->
 
@@ -36,12 +39,17 @@
 								<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> 传智专修学院</a></li>
 								<li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> yy2428065460@gmail.com</a></li>
 							</ul>
-							<ul class="float-right top-header-right">
-								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
-							</ul>
+							{% if not nick_name %}
+							<div class="float-right ">
+                                <a href="javascript:;" class="login_btn">登录</a> / <a href="javascript:;" class="register_btn">注册</a>
+                            </div>
+							{% else %}
+                            <div class="user_login fr">
+                                <img src="/static/images/upload/{{ user.avatar_url }}" class="lgin_pic" >
+                                <a href="{{ url_for('user_blu.user_center') }}" >{{ nick_name }}</a>
+                                <a href="/passport/logout">退出</a>
+							</div>
+                            {% endif %}
 						</div>
 					</div>
 				</div>
@@ -53,17 +61,7 @@
 
 							<div class="search-button-content float-right">
 								<button class="cart tran3s"><i class="fa fa-shopping-bag" aria-hidden="true"></i> <span>2</span></button>
-					   			<button class="search b-p-bg-color" id="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
-					   			<div class="search-box tran5s" id="searchWrapper">
-					   				<button id="close-button" class="p-color"><i class="fa fa-times" aria-hidden="true"></i></button>
-					   				<div class="container">
-					   					<img src="/static/images/them-logo/them-main-logo-1.png" alt="Logo">
-					   					<form action="#">
-					   						<input type="text" placeholder="Search....">
-					   						<button class="p-bg-color"><i class="fa fa-search" aria-hidden="true"></i></button>
-					   					</form>
-					   				</div>
-					   			</div> <!-- /.search-box -->
+
 					   		</div> <!-- /.right-content -->
 					   		<div class="them-logo float-left"><a href="#"><img src="/static/images/them-logo/them-main-logo-1.jpg" alt="logo"></a></div>
 
@@ -368,6 +366,72 @@
 		<script type="text/javascript" src="/static/vendor/circle-progress.js"></script>
 		<!-- Style js -->
 		<script src="/static/js/custom.js"></script>
+
+    <form class="login_form_con">
+        <div class="login_form">
+            <div class="login_title">
+                <h3>登 录</h3>
+                <a href="javascript:;" class="shutoff"></a>
+            </div>
+            <div class="form_group">
+                <input id="mobile" type="text" name="mobile" autocomplete="off">
+                <div class="input_tip">手机号</div>
+                <div id="login-mobile-err" class="error_tip">手机号不能为空</div>
+            </div>
+            <div class="form_group">
+                <input id="password" type="password" name="password">
+                <div class="input_tip">密码</div>
+                <div id="login-password-err" class="error_tip">密码不能为空</div>
+            </div>
+            <input type="submit" name="" value="登 录" class="input_sub">
+            <div class="down_link">还没有账号？<a href="javascript:;" class="to_register">立即注册</a></div>
+            </div>
+        <div class="mask"></div>
+    </form>
+
+<!-- 注册表单 -->
+    <form class="register_form_con">
+        <div class="register_form">
+            <div class="register_title">
+                <h3>注 册</h3>
+                <a href="javascript:;" class="shutoff"></a>
+            </div>
+            <div class="form_group">
+                <input type="text" name="mobile" autocomplete="off" id="register_mobile" class="phone_input">
+                <div class="input_tip">手机号</div>
+                <div id="register-mobile-err" class="error_tip">手机号不能为空</div>
+            </div>
+            <div class="form_group">
+                <input type="text" name="code_pwd" id="image_code" class="code_pwd">
+                <div class="input_tip">图形验证码</div>
+                <img src="/static/images/pic_code.png" class="get_pic_code" onclick="generateImageCode()">
+                <div id="register-image-code-err" class="error_tip">图形码不能为空</div>
+            </div>
+            <div class="form_group">
+                <input type="text" name="smscode" id="smscode" class="code_pwd">
+                <div class="input_tip">手机验证码</div>
+                <a href="javascript:;" class="get_code" onclick="sendSMSCode()">点击获取验证码</a>
+                <div id="register-sms-code-err" class="error_tip">验证码不能为空</div>
+            </div>
+            <div class="form_group">
+                <input type="password" name="password" id="register_password" class="pass_input">
+                <div class="input_tip">密码(不少于六位数)</div>
+                <div id="register-password-err" class="error_tip">密码不能为空</div>
+            </div>
+            <div class="form_group2 clearfix">
+                <input type="checkbox" class="agree_input" checked>
+                <p>同意使用条款，并已阅读"跟帖评论自律管理承诺书"</p>
+                <div class="error_tip">请勾选</div>
+            </div>
+            <input type="submit" name="" value="注 册" class="input_sub">
+            <div class="down_link">已有账号？<a href="javascript:;" class="to_login">立即登录</a></div>
+        </div>
+        <div class="mask"></div>
+    </form>
+        <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
+        <script type="text/javascript">
+            L2Dwidget.init();
+        </script>
 
 	</body>
 </html>

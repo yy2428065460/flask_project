@@ -13,6 +13,9 @@
 		<link rel="stylesheet" href="/static/css/style.css">
 		<!-- responsive style sheet -->
 		<link rel="stylesheet" href="/static/css/responsive.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+        <script type="text/javascript" src="/static/js/main.js"></script>
 
 		<!-- Fix Internet Explorer ______________________________________-->
 
@@ -23,7 +26,7 @@
 		<![endif]-->
 	</head>
 	
-	<body>
+
 	
 		<div class="main-page-wrapper">
 
@@ -36,12 +39,17 @@
 								<li><a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> 传智专修学院</a></li>
 								<li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i> yy2428065460@gmail.com</a></li>
 							</ul>
-							<ul class="float-right top-header-right">
-								<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-								<li><a href="#"><i class="fa fa-google" aria-hidden="true"></i></a></li>
-							</ul>
+							{% if not nick_name %}
+							<div class="float-right ">
+                                <a href="javascript:;" class="login_btn">登录</a> / <a href="javascript:;" class="register_btn">注册</a>
+                            </div>
+							{% else %}
+                            <div class="user_login fr">
+                                <img src="/static/images/upload/{{ user.avatar_url }}" class="lgin_pic" >
+                                <a href="{{ url_for('user_blu.user_center') }}" >{{ nick_name }}</a>
+                                <a href="/passport/logout">退出</a>
+							</div>
+                            {% endif %}
 						</div>
 					</div>
 				</div>
@@ -52,18 +60,18 @@
 						<div class="main-menu clear-fix">
 
 							<div class="search-button-content float-right">
-								<button class="cart tran3s"><i class="fa fa-shopping-bag" aria-hidden="true"></i> <span>2</span></button>
-					   			<button class="search b-p-bg-color" id="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
-					   			<div class="search-box tran5s" id="searchWrapper">
-					   				<button id="close-button" class="p-color"><i class="fa fa-times" aria-hidden="true"></i></button>
-					   				<div class="container">
-					   					<img src="/static/images/them-logo/them-main-logo-1.png" alt="Logo">
-					   					<form action="#">
-					   						<input type="text" placeholder="Search....">
-					   						<button class="p-bg-color"><i class="fa fa-search" aria-hidden="true"></i></button>
-					   					</form>
-					   				</div>
-					   			</div> <!-- /.search-box -->
+								<a href="{{ url_for('index_blu.shopping_cart') }}"> <button  class="cart tran3s"><i class="fa fa-shopping-bag" aria-hidden="true"></i> </button></a>
+{#					   			<button class="search b-p-bg-color" id="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>#}
+{#					   			<div class="search-box tran5s" id="searchWrapper">#}
+{#					   				<button id="close-button" class="p-color"><i class="fa fa-times" aria-hidden="true"></i></button>#}
+{#					   				<div class="container">#}
+{#					   					<img src="/static/images/them-logo/them-main-logo-1.png" alt="Logo">#}
+{#					   					<form action="#">#}
+{#					   						<input type="text" placeholder="Search....">#}
+{#					   						<button class="p-bg-color"><i class="fa fa-search" aria-hidden="true"></i></button>#}
+{#					   					</form>#}
+{#					   				</div>#}
+{#					   			</div> <!-- /.search-box -->#}
 					   		</div> <!-- /.right-content -->
 					   		<div class="them-logo float-left"><a href="#"><img src="/static/images/them-logo/them-main-logo-1.jpg" alt="logo"></a></div>
 
@@ -131,26 +139,17 @@
 					<div class="single-product-details">
 						<div class="row">
 							<div class="col-sm-6 col-xs-12 product-order-img">
-								<div class="vig-img"><img src="/static/images/shop/img-20.jpg" alt="image"></div>
+								<div class="vig-img"><img src="/static/images/shop/hl.jpg" alt="image"></div>
 								<div class="row">
-									<div class="col-xs-4">
-										<div><img src="/static/images/shop/img-21.jpg" alt="image"></div>
-									</div>
-									<div class="col-xs-4">
-										<div><img src="/static/images/shop/img-22.jpg" alt="image"></div>
-									</div>
-									<div class="col-xs-4">
-										<div><img src="/static/images/shop/img-23.jpg" alt="image"></div>
-									</div>
 								</div>
 							</div>
 							<div class="col-sm-6 col-xs-12">
 								<div class="product-order-details">
-									<h5>Royal Canin Maxi 消化护理15kg</h5>
+									<h5>狗狗消化护理</h5>
 									<ul class="price">
-										<li>$68</li>
-										<li><del>$98</del></li>
-										<li>In stock</li>
+										<li>￥69</li>
+										<li><del>￥99</del></li>
+
 									</ul>
 									<div class="rating-and-tag">
 										<ul class="rating">
@@ -158,17 +157,14 @@
 											<li><i class="fa fa-star" aria-hidden="true"></i></li>
 											<li><i class="fa fa-star" aria-hidden="true"></i></li>
 											<li><i class="fa fa-star" aria-hidden="true"></i></li>
-											<li><i class="fa fa-star-half-o" aria-hidden="true"></i></li>
+											<li><i class="fa fa-star" aria-hidden="true"></i></li>
 										</ul>
 									</div>
 									<p>狗的完全饲料-为成年和成熟的大型犬(26 - 44公斤)。由于高质量的蛋白质来源和MOS，促进肠道菌群的平衡和改善粪便质量，增强消化耐受性。</p>
 									<div class="value-decrease-and-button">
-										<ul class="value-section">
-											<li><button class="tran3s" id="value-decrease"><i class="fa fa-minus" aria-hidden="true"></i></button> </li>
-											<li id="product-value">1</li>
-											<li><button class="tran3s" id="value-increase"><i class="fa fa-plus" aria-hidden="true"></i></button> </li>
-										</ul>
-										<a href="#" class="hvr-float-shadow">加入购物车</a>
+
+
+										<a href="{{ url_for('index_blu.shopping_cart') }}" class="hvr-float-shadow">加入购物车</a>
 									</div>
 								</div> <!-- /.product-order-details -->
 							</div> <!-- /.single-product-details -->
@@ -187,8 +183,30 @@
 									    	<h6>消化健康</h6>
 									    	<p>由于高质量的蛋白质来源和MOS，促进肠道菌群的平衡和改善粪便质量，增强消化耐受性。</p>
 										</div>
-									  	<div id="menu1" class="tab-pane fade">
-									    	<h4>现在下单购买此商品还有机会获得我们送出的免单活动哦！！！</h4>
+
+									  	<div id="menu2" class="tab-pane fade">
+									    	<div id="review">
+												<div class="single-review clearfix">
+													<img src="images/home/img-5.jpg" alt="" class="float-left">
+													<div class="text float-left">
+														<div class="clearfix">
+															<div class="float-left">
+																<span>March 14, 2017</span>
+																<span>10 days ago</span>
+																<h6>Lindsay Lohan</h6>
+															</div>
+															<ul class="float-right">
+																<li><i class="fa fa-star" aria-hidden="true"></i></li>
+																<li><i class="fa fa-star" aria-hidden="true"></i></li>
+																<li><i class="fa fa-star" aria-hidden="true"></i></li>
+																<li><i class="fa fa-star" aria-hidden="true"></i></li>
+																<li><i class="fa fa-star" aria-hidden="true"></i></li>
+															</ul>
+														</div> <!-- /.clearfix -->
+
+													</div> <!-- /.text -->
+												</div> <!-- /.single-review -->
+											</div> <!-- /.review -->
 									  	</div>
 									</div>
 								</div> <!-- /.review-tab -->
@@ -203,49 +221,38 @@
 									<p>成分:脱水家禽蛋白、大米、小麦粉、动物脂肪、植物分离蛋白*、小麦、大麦、玉米面筋、水解动物蛋白、植物纤维、甜菜浆、鱼油、大豆油、矿物质、车前草壳和种子、琉璃苣油、水解甲壳动物(葡萄糖胺来源)、水解软骨(软骨素来源)。</p>
 								</div>
 								<div class="delivery">
-									<h6>运送到英国</h6>
-									<p>到英国30英镑或以上的订单免费送货到英国。低于此金额的订单将收取$ 4.95的送货费。</p>
-									<p>添加剂（每千克）：营养添加剂：维生素A：19000 IU，维生素D3：800 IU，E1（铁）：41 mg，E2（碘）：4.1 mg，E4（铜）：8 mg，E5（锰）： 53毫克，E6（锌）：159毫克，E8（硒）：0.07毫克-防腐剂-抗氧化剂。</p>
-									<p>分析成分：蛋白质：28％-脂肪含量：18％-粗灰分：5.9％-粗纤维：2.9％-每千克：甘露寡糖：0.5 g-ω6脂肪酸：35.2 g。* LIP：因具有极高的同化作用而选择的蛋白质。</p>
+									<h6>运送到中国</h6>
+									<p>30英镑或以上的订单可以免费送到英国。低于此金额的订单需支付4.95美元的运费。</p>
+									<p>添加剂(每公斤)营养添加剂:维生素A: 19000 IU，维生素D3: 800 IU, E1(铁):41 mg, E2(碘):4.1 mg, E4(铜):8 mg, E5(锰):53 mg, E6(锌):159 mg, E8(硒):0.07 mg防腐剂-抗氧化剂。</p>
+									<p>分析成分:蛋白质:28% -脂肪:18% -粗灰分:5.9% -粗纤维:2.9% -每公斤:甘露寡糖:0.5 g -欧米加6脂肪酸:35.2 g * li.p.:因其极高的同化性而选择的蛋白质。</p>
 								</div>
 								<div class="related-product">
-									<h5>相关产品</h5>
+									<h5>其他产品</h5>
 									<div class="row">
 										<div class="col-sm-3 col-xs-6">
 											<div class="related-product-item text-center">
-												<div><img src="/static/images/shop/img-23.jpg" alt="image"></div>
-												<a href="#">Smart Dog</a>
-												<span>$ 43</span>
+												<div><img src="/static/images/shop/alsj.jpg" alt="image"></div>
+												<a href="#">阿拉斯加雪橇犬</a>
+												<span>￥1999</span>
 											</div>
 										</div>
 										<div class="col-sm-3 col-xs-6">
 											<div class="related-product-item text-center">
-												<div><img src="/static/images/shop/img-24.jpg" alt="image"></div>
-												<a href="#">Smart Cat</a>
-												<span>$ 34</span>
+												<div><img src="/static/images/shop/doghm.jpg" alt="image"></div>
+												<a href="#">狗狗沐浴露</a>
+												<span>￥49</span>
 											</div>
 										</div>
-										<div class="col-sm-3 col-xs-6">
-											<div class="related-product-item text-center">
-												<div><img src="/static/images/shop/img-25.jpg" alt="image"></div>
-												<a href="#">Dry Tech Pads</a>
-												<span>$ 13</span>
-											</div>
-										</div>
-										<div class="col-sm-3 col-xs-6">
-											<div class="related-product-item text-center">
-												<div><img src="/static/images/shop/img-26.jpg" alt="image"></div>
-												<a href="#">Cucumber</a>
-												<span>$ 24</span>
-											</div>
-										</div>
+
+
 									</div>
-								</div>	
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section> <!-- / .shop-page-details -->
+
 
 			<!-- Footer ____________________________ -->
 			<footer>
@@ -358,6 +365,73 @@
 		<script type="text/javascript" src="/static/vendor/circle-progress.js"></script>
 		<!-- Style js -->
 		<script src="/static/js/custom.js"></script>
+
+    <form class="login_form_con">
+        <div class="login_form">
+            <div class="login_title">
+                <h3>登 录</h3>
+                <a href="javascript:;" class="shutoff"></a>
+            </div>
+            <div class="form_group">
+                <input id="mobile" type="text" name="mobile" autocomplete="off">
+                <div class="input_tip">手机号</div>
+                <div id="login-mobile-err" class="error_tip">手机号不能为空</div>
+            </div>
+            <div class="form_group">
+                <input id="password" type="password" name="password">
+                <div class="input_tip">密码</div>
+                <div id="login-password-err" class="error_tip">密码不能为空</div>
+            </div>
+            <input type="submit" name="" value="登 录" class="input_sub">
+            <div class="down_link">还没有账号？<a href="javascript:;" class="to_register">立即注册</a></div>
+            </div>
+        <div class="mask"></div>
+    </form>
+
+<!-- 注册表单 -->
+    <form class="register_form_con">
+        <div class="register_form">
+            <div class="register_title">
+                <h3>注 册</h3>
+                <a href="javascript:;" class="shutoff"></a>
+            </div>
+            <div class="form_group">
+                <input type="text" name="mobile" autocomplete="off" id="register_mobile" class="phone_input">
+                <div class="input_tip">手机号</div>
+                <div id="register-mobile-err" class="error_tip">手机号不能为空</div>
+            </div>
+            <div class="form_group">
+                <input type="text" name="code_pwd" id="image_code" class="code_pwd">
+                <div class="input_tip">图形验证码</div>
+                <img src="/static/images/pic_code.png" class="get_pic_code" onclick="generateImageCode()">
+                <div id="register-image-code-err" class="error_tip">图形码不能为空</div>
+            </div>
+            <div class="form_group">
+                <input type="text" name="smscode" id="smscode" class="code_pwd">
+                <div class="input_tip">手机验证码</div>
+                <a href="javascript:;" class="get_code" onclick="sendSMSCode()">点击获取验证码</a>
+                <div id="register-sms-code-err" class="error_tip">验证码不能为空</div>
+            </div>
+            <div class="form_group">
+                <input type="password" name="password" id="register_password" class="pass_input">
+                <div class="input_tip">密码(不少于六位数)</div>
+                <div id="register-password-err" class="error_tip">密码不能为空</div>
+            </div>
+            <div class="form_group2 clearfix">
+                <input type="checkbox" class="agree_input" checked>
+                <p>同意使用条款，并已阅读"跟帖评论自律管理承诺书"</p>
+                <div class="error_tip">请勾选</div>
+            </div>
+            <input type="submit" name="" value="注 册" class="input_sub">
+            <div class="down_link">已有账号？<a href="javascript:;" class="to_login">立即登录</a></div>
+        </div>
+        <div class="mask"></div>
+    </form>
+        <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
+        <script type="text/javascript">
+            L2Dwidget.init();
+        </script>
+
 
 	</body>
 </html>
